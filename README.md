@@ -6,6 +6,6 @@ LinksPlatform's Platform.Timestamps Class Library
 
 Namespace: Platform.Timestamps
 
-Forked from: https://github.com/Konard/LinksPlatform/tree/0c85f236b75e6e3110790008b1a379c03c954501/Platform/Platform.Helpers/Timestamps
+Forked from: [Konard/LinksPlatform/Platform/Platform.Helpers/Timestamps](https://github.com/Konard/LinksPlatform/tree/0c85f236b75e6e3110790008b1a379c03c954501/Platform/Platform.Helpers/Timestamps)
 
-NuGet package: https://www.nuget.org/packages/Platform.Timestamps
+NuGet package: [Platform.Timestamps](https://www.nuget.org/packages/Platform.Timestamps)
