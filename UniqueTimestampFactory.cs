@@ -9,7 +9,7 @@ namespace Platform.Timestamps
     /// </summary>
     public class UniqueTimestampFactory : IFactory<Timestamp>
     {
-        private ulong _lastTicks = 0;
+        private ulong _lastTicks;
 
         /// <summary>
         /// Creates a timestamp corresponding to the current UTC date and time or next unique timestamp
@@ -18,10 +18,7 @@ namespace Platform.Timestamps
         public Timestamp Create()
         {
             var utcTicks = (ulong)DateTime.UtcNow.Ticks;
-            if (utcTicks <= _lastTicks)
-                return new Timestamp(_lastTicks++);
-            else
-                return new Timestamp(utcTicks);
+            return utcTicks <= _lastTicks ? new Timestamp(_lastTicks++) : new Timestamp(utcTicks);
         }
     }
 }
