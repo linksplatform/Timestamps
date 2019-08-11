@@ -19,12 +19,13 @@
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
     <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <PackageReleaseNotes>Now Timestamp is convertable to ulong and back.
 Issues fixes.</PackageReleaseNotes>
   </PropertyGroup>
-
+  
   <ItemGroup>
     <PackageReference Include="Platform.Interfaces" Version="0.1.0" />
   </ItemGroup>
