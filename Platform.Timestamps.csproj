@@ -4,7 +4,7 @@
     <Description>LinksPlatform's Platform.Timestamps Class Library</Description>
     <Copyright>Konstantin Diachenko</Copyright>
     <AssemblyTitle>Platform.Timestamps</AssemblyTitle>
-    <VersionPrefix>0.0.2</VersionPrefix>
+    <VersionPrefix>0.0.3</VersionPrefix>
     <Authors>Konstantin Diachenko</Authors>
     <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>Platform.Timestamps</AssemblyName>
@@ -22,8 +22,9 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-    <PackageReleaseNotes>Now Timestamp is convertable to ulong and back.
-Issues fixes.</PackageReleaseNotes>
+    <PackageReleaseNotes>Platform.Interfaces dependency updated from 0.0.1 to 0.1.0.
+Added missing comments for public members.
+XML documentation generation turned on.</PackageReleaseNotes>
   </PropertyGroup>
   
   <ItemGroup>
