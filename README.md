@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.com/linksplatform/Timestamps.svg?branch=master)](https://travis-ci.com/linksplatform/Timestamps)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/5ac4e6ec489e47ffb7933fae393eb587)](https://app.codacy.com/app/drakonard/Timestamps?utm_source=github.com&utm_medium=referral&utm_content=linksplatform/Timestamps&utm_campaign=Badge_Grade_Dashboard)
 [![CodeFactor](https://www.codefactor.io/repository/github/linksplatform/timestamps/badge)](https://www.codefactor.io/repository/github/linksplatform/timestamps)
 
