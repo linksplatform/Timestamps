@@ -38,6 +38,12 @@ references:
   commentId: M:Platform.Timestamps.Timestamp.Equals(Platform.Timestamps.Timestamp)
   fullName: Platform.Timestamps.Timestamp.Equals(Platform.Timestamps.Timestamp)
   nameWithType: Timestamp.Equals(Timestamp)
+- uid: Platform.Timestamps.Timestamp.Equals(System.Object)
+  name: Equals(Object)
+  href: api/Platform.Timestamps.Timestamp.html#Platform_Timestamps_Timestamp_Equals_System_Object_
+  commentId: M:Platform.Timestamps.Timestamp.Equals(System.Object)
+  fullName: Platform.Timestamps.Timestamp.Equals(System.Object)
+  nameWithType: Timestamp.Equals(Object)
 - uid: Platform.Timestamps.Timestamp.Equals*
   name: Equals
   href: api/Platform.Timestamps.Timestamp.html#Platform_Timestamps_Timestamp_Equals_
@@ -45,6 +51,19 @@ references:
   isSpec: "True"
   fullName: Platform.Timestamps.Timestamp.Equals
   nameWithType: Timestamp.Equals
+- uid: Platform.Timestamps.Timestamp.GetHashCode
+  name: GetHashCode()
+  href: api/Platform.Timestamps.Timestamp.html#Platform_Timestamps_Timestamp_GetHashCode
+  commentId: M:Platform.Timestamps.Timestamp.GetHashCode
+  fullName: Platform.Timestamps.Timestamp.GetHashCode()
+  nameWithType: Timestamp.GetHashCode()
+- uid: Platform.Timestamps.Timestamp.GetHashCode*
+  name: GetHashCode
+  href: api/Platform.Timestamps.Timestamp.html#Platform_Timestamps_Timestamp_GetHashCode_
+  commentId: Overload:Platform.Timestamps.Timestamp.GetHashCode
+  isSpec: "True"
+  fullName: Platform.Timestamps.Timestamp.GetHashCode
+  nameWithType: Timestamp.GetHashCode
 - uid: Platform.Timestamps.Timestamp.op_Implicit(Platform.Timestamps.Timestamp)~System.DateTime
   name: Implicit(Timestamp to DateTime)
   href: api/Platform.Timestamps.Timestamp.html#Platform_Timestamps_Timestamp_op_Implicit_Platform_Timestamps_Timestamp__System_DateTime
