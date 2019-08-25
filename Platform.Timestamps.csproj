@@ -4,7 +4,7 @@
     <Description>LinksPlatform's Platform.Timestamps Class Library</Description>
     <Copyright>Konstantin Diachenko</Copyright>
     <AssemblyTitle>Platform.Timestamps</AssemblyTitle>
-    <VersionPrefix>0.0.3</VersionPrefix>
+    <VersionPrefix>0.0.4</VersionPrefix>
     <Authors>Konstantin Diachenko</Authors>
     <TargetFrameworks Condition="'$(OS)' == 'Windows_NT'">netstandard2.0;net461</TargetFrameworks>
     <TargetFramework Condition="'$(OS)' != 'Windows_NT'">netcoreapp2.0</TargetFramework>
@@ -22,9 +22,10 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-    <PackageReleaseNotes>Platform.Interfaces dependency updated from 0.0.1 to 0.1.0.
-Added missing comments for public members.
-XML documentation generation turned on.</PackageReleaseNotes>
+    <PackageReleaseNotes>Added support fot net461 (.NET Framework 4.6.1).
+Platform.Interfaces dependency updated from 0.1.0 to 0.1.1.
+Added specific implementations of System.Object.Equals and System.Object.GetHashCode for Timestamp structure.
+Issues fix.</PackageReleaseNotes>
   </PropertyGroup>
   
   <ItemGroup>
