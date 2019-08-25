@@ -3,75 +3,90 @@
 namespace Platform.Timestamps
 {
     /// <summary>
-    /// Represents a timestamp.
-    /// Представляет метку времени.
+    /// <para>Represents a timestamp.</para>
+    /// <para>Представляет метку времени.</para>
     /// </summary>
     /// <remarks>
-    /// To make this timestamp truly unique, it is recommended to use <see cref="UniqueTimestampFactory"/>.
-    /// Чтобы эта метка времени была дейстительно уникальна рекомендуется использовать <see cref="UniqueTimestampFactory"/>.
+    /// <para>To make this timestamp truly unique, it is recommended to use <see cref="UniqueTimestampFactory"/>.</para>
+    /// <para>Чтобы эта метка времени была дейстительно уникальна рекомендуется использовать <see cref="UniqueTimestampFactory"/>.</para>
     /// </remarks>
     public struct Timestamp : IEquatable<Timestamp>
     {
         /// <summary>
-        /// Returns a string containg the default DateTime format for Timestamp.
-        /// Возвращает строку, содержащую формат даты и времени по умолчанию для метки времени.
+        /// <para>Returns a string containg the default DateTime format for Timestamp.</para>
+        /// <para>Возвращает строку, содержащую формат даты и времени по умолчанию для метки времени.</para>
         /// </summary>
         public static readonly string DefaultFormat = "yyyy.MM.dd hh:mm:ss.fffffff";
 
         /// <summary>
-        /// Gets or sets the number of ticks that represent the date and time in UTC.
-        /// Возвращает или устанавливает количество тиков, которые представляют дату и время в UTC.
+        /// <para>Gets or sets the number of ticks that represent the date and time in UTC.</para>
+        /// <para>Возвращает или устанавливает количество тиков, которые представляют дату и время в UTC.</para>
         /// </summary>
         public readonly ulong Ticks;
 
         /// <summary>
-        /// Creates a timestamp.
-        /// Создаёт метку времени.
+        /// <para>Creates a timestamp.</para>
+        /// <para>Создаёт метку времени.</para>
         /// </summary>
-        /// <param name="ticks">A number representing the number of ticks. Число представляющие количество тиков.</param>
+        /// <param name="ticks"><para>A number representing the number of ticks.</para><para>Число представляющие количество тиков.</para></param>
         public Timestamp(ulong ticks) => Ticks = ticks;
 
         /// <summary>
-        /// Defines an implicit conversion of a DateTime to a Timestamp.
-        /// Определяет неявное преобразование DateTime в метку времени.
+        /// <para>Defines an implicit conversion of a DateTime to a Timestamp.</para>
+        /// <para>Определяет неявное преобразование DateTime в метку времени.</para>
         /// </summary>
-        /// <param name="dateTime">The DateTime struct. Структура DateTime.</param>
+        /// <param name="dateTime"><para>The DateTime struct.</para><para>Структура DateTime.</para></param>
         public static implicit operator Timestamp(DateTime dateTime) => new Timestamp((ulong)dateTime.ToUniversalTime().Ticks);
 
         /// <summary>
-        /// Defines an implicit conversion of a Timestamp to a DateTime.
-        /// Определяет неявное преобразование метки времени в DateTime.
+        /// <para>Defines an implicit conversion of a Timestamp to a DateTime.</para>
+        /// <para>Определяет неявное преобразование метки времени в DateTime.</para>
         /// </summary>
-        /// <param name="timestamp">The Timestamp. Отметка времени.</param>
+        /// <param name="timestamp"><para>The Timestamp.</para><para>Отметка времени.</para></param>
         public static implicit operator DateTime(Timestamp timestamp) => new DateTime((long)timestamp.Ticks, DateTimeKind.Utc);
 
         /// <summary>
-        /// Defines an implicit conversion of a 64-bit unsigned integer to a Timestamp.
-        /// Определяет неявное преобразование 64-разрядного целого числа без знака в метку времени.
+        /// <para>Defines an implicit conversion of a 64-bit unsigned integer to a Timestamp.</para>
+        /// <para>Определяет неявное преобразование 64-разрядного целого числа без знака в метку времени.</para>
         /// </summary>
-        /// <param name="ticks">The number of ticks represented as a 64-bit integer. Количество тиков представленное в виде 64-разрядного целого числа.</param>
+        /// <param name="ticks"><para>The number of ticks represented as a 64-bit integer.</para><para>Количество тиков представленное в виде 64-разрядного целого числа.</para></param>
         public static implicit operator Timestamp(ulong ticks) => new Timestamp(ticks);
 
         /// <summary>
-        /// Defines an implicit conversion of a Timestamp to a 64-bit unsigned integer.
-        /// Определяет неявное преобразование метки времени в 64-разрядное целое число без знака.
+        /// <para>Defines an implicit conversion of a Timestamp to a 64-bit unsigned integer.</para>
+        /// <para>Определяет неявное преобразование метки времени в 64-разрядное целое число без знака.</para>
         /// </summary>
-        /// <param name="timestamp">The Timestamp. Отметка времени.</param>
+        /// <param name="timestamp"><para>The Timestamp.</para><para>Отметка времени.</para></param>
         public static implicit operator ulong(Timestamp timestamp) => timestamp.Ticks;
 
         /// <summary>
-        /// Returns a string that represents the current Timestamp.
-        /// Возвращает строку, которая представляет текущую метку времени.
+        /// <para>Returns a string that represents the current Timestamp.</para>
+        /// <para>Возвращает строку, которая представляет текущую метку времени.</para>
         /// </summary>
-        /// <returns>A string that represents the current Timestamp. Строка, представляющая текущую метку времени.</returns>
+        /// <returns><para>A string that represents the current Timestamp.</para><para>Строка, представляющая текущую метку времени.</para></returns>
         public override string ToString() => ((DateTime)this).ToString(DefaultFormat);
 
         /// <summary>
-        /// Определяет, равна ли текущая отметка времени другой отметке времени.
-        /// Indicates whether the current Timestamp is equal to another Timestamp.
+        /// <para>Определяет, равна ли текущая отметка времени другой отметке времени.</para>
+        /// <para>Indicates whether the current Timestamp is equal to another Timestamp.</para>
         /// </summary>
-        /// <param name="other">Other Timestamp. Другая отметка времени.</param>
-        /// <returns>True if the current Timestamp is equal to the other Timestamp; otherwise, false. Истину, если текущая отметка времени равна другой отметке времени; иначе ложь.</returns>
+        /// <param name="other"><para>Other Timestamp.</para><para>Другая отметка времени.</para></param>
+        /// <returns><para>True if the current Timestamp is equal to the other Timestamp; otherwise, false.</para><para>Истину, если текущая отметка времени равна другой отметке времени; иначе ложь.</para></returns>
         public bool Equals(Timestamp other) => Ticks == other.Ticks;
+
+        /// <summary>
+        /// <para>Determines whether the specified object is equal to the current object.</para>
+        /// <para>Определяет, равен ли указанный объект текущему объекту.</para>
+        /// </summary>
+        /// <param name="obj"><para>The object to compare with the current object.</para><para>Объект для сравнения с текущим объектом.</para></param>
+        /// <returns><para>True if the specified object is equal to the current object; otherwise, false.</para><para>Истину, если указанный объект равен текущему объекту; иначе ложь.</para></returns>
+        public override bool Equals(object obj) => obj is Timestamp timestamp ? Equals(timestamp) : false;
+
+        /// <summary>
+        /// <para>Serves as the default hash function.</para>
+        /// <para>Служит в качестве хэш-функции по умолчанию.</para>
+        /// </summary>
+        /// <returns><para>A hash code for the current object.</para><para>Хеш-код для текущего объекта.</para></returns>
+        public override int GetHashCode() => Ticks.GetHashCode();
     }
 }
