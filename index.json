@@ -4,15 +4,15 @@
     "title": "Timestamps | LinksPlatform's Platform.Timestamps Library",
     "keywords": "Timestamps LinksPlatform's Platform.Timestamps Class Library Namespace: Platform.Timestamps Forked from: Konard/LinksPlatform/Platform/Platform.Helpers/Timestamps NuGet package: Platform.Timestamps Documentation PDF file with code for e-readers. Depend on Platform.Interfaces Dependent libraries Platform.Data.Doublets"
   },
-  "api/Platform.Timestamps.UniqueTimestampFactory.html": {
-    "href": "api/Platform.Timestamps.UniqueTimestampFactory.html",
-    "title": "Class UniqueTimestampFactory | LinksPlatform's Platform.Timestamps Library",
-    "keywords": "Class UniqueTimestampFactory Represents a factory for creating unique timestamps. Представляет фабрику по созданию уникальных отметок времени. Inheritance Object UniqueTimestampFactory Implements Platform.Interfaces.IFactory < Timestamp > Inherited Members Object.Equals(Object) Object.Equals(Object, Object) Object.GetHashCode() Object.GetType() Object.MemberwiseClone() Object.ReferenceEquals(Object, Object) Object.ToString() Namespace : Platform.Timestamps Assembly : Platform.Timestamps.dll Syntax public class UniqueTimestampFactory : IFactory<Timestamp> Methods | Improve this Doc View Source Create() Creates a timestamp corresponding to the current UTC date and time or next unique timestamp. Создаёт отмеку времени соответствующую текущей дате и времени по UTC или следующую уникальную отметку времени. Declaration public Timestamp Create() Returns Type Description Timestamp Implements Platform.Interfaces.IFactory<TProduct>"
-  },
   "api/Platform.Timestamps.html": {
     "href": "api/Platform.Timestamps.html",
     "title": "Namespace Platform.Timestamps | LinksPlatform's Platform.Timestamps Library",
     "keywords": "Namespace Platform.Timestamps Classes UniqueTimestampFactory Represents a factory for creating unique timestamps. Представляет фабрику по созданию уникальных отметок времени. Structs Timestamp Represents a timestamp. Представляет метку времени."
+  },
+  "api/Platform.Timestamps.UniqueTimestampFactory.html": {
+    "href": "api/Platform.Timestamps.UniqueTimestampFactory.html",
+    "title": "Class UniqueTimestampFactory | LinksPlatform's Platform.Timestamps Library",
+    "keywords": "Class UniqueTimestampFactory Represents a factory for creating unique timestamps. Представляет фабрику по созданию уникальных отметок времени. Inheritance Object UniqueTimestampFactory Implements Platform.Interfaces.IFactory < Timestamp > Inherited Members Object.Equals(Object) Object.Equals(Object, Object) Object.GetHashCode() Object.GetType() Object.MemberwiseClone() Object.ReferenceEquals(Object, Object) Object.ToString() Namespace : Platform.Timestamps Assembly : Platform.Timestamps.dll Syntax public class UniqueTimestampFactory : IFactory<Timestamp> Methods | Improve this Doc View Source Create() Creates a timestamp corresponding to the current UTC date and time or next unique timestamp. Создаёт отмеку времени соответствующую текущей дате и времени по UTC или следующую уникальную отметку времени. Declaration public Timestamp Create() Returns Type Description Timestamp Implements Platform.Interfaces.IFactory<TProduct>"
   },
   "api/Platform.Timestamps.Timestamp.html": {
     "href": "api/Platform.Timestamps.Timestamp.html",
