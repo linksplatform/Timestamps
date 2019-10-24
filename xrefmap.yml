@@ -64,6 +64,19 @@ references:
   isSpec: "True"
   fullName: Platform.Timestamps.Timestamp.GetHashCode
   nameWithType: Timestamp.GetHashCode
+- uid: Platform.Timestamps.Timestamp.op_Equality(Platform.Timestamps.Timestamp,Platform.Timestamps.Timestamp)
+  name: Equality(Timestamp, Timestamp)
+  href: api/Platform.Timestamps.Timestamp.html#Platform_Timestamps_Timestamp_op_Equality_Platform_Timestamps_Timestamp_Platform_Timestamps_Timestamp_
+  commentId: M:Platform.Timestamps.Timestamp.op_Equality(Platform.Timestamps.Timestamp,Platform.Timestamps.Timestamp)
+  fullName: Platform.Timestamps.Timestamp.Equality(Platform.Timestamps.Timestamp, Platform.Timestamps.Timestamp)
+  nameWithType: Timestamp.Equality(Timestamp, Timestamp)
+- uid: Platform.Timestamps.Timestamp.op_Equality*
+  name: Equality
+  href: api/Platform.Timestamps.Timestamp.html#Platform_Timestamps_Timestamp_op_Equality_
+  commentId: Overload:Platform.Timestamps.Timestamp.op_Equality
+  isSpec: "True"
+  fullName: Platform.Timestamps.Timestamp.Equality
+  nameWithType: Timestamp.Equality
 - uid: Platform.Timestamps.Timestamp.op_Implicit(Platform.Timestamps.Timestamp)~System.DateTime
   name: Implicit(Timestamp to DateTime)
   href: api/Platform.Timestamps.Timestamp.html#Platform_Timestamps_Timestamp_op_Implicit_Platform_Timestamps_Timestamp__System_DateTime
@@ -110,6 +123,19 @@ references:
   fullName.vb: Platform.Timestamps.Timestamp.Widening
   nameWithType: Timestamp.Implicit
   nameWithType.vb: Timestamp.Widening
+- uid: Platform.Timestamps.Timestamp.op_Inequality(Platform.Timestamps.Timestamp,Platform.Timestamps.Timestamp)
+  name: Inequality(Timestamp, Timestamp)
+  href: api/Platform.Timestamps.Timestamp.html#Platform_Timestamps_Timestamp_op_Inequality_Platform_Timestamps_Timestamp_Platform_Timestamps_Timestamp_
+  commentId: M:Platform.Timestamps.Timestamp.op_Inequality(Platform.Timestamps.Timestamp,Platform.Timestamps.Timestamp)
+  fullName: Platform.Timestamps.Timestamp.Inequality(Platform.Timestamps.Timestamp, Platform.Timestamps.Timestamp)
+  nameWithType: Timestamp.Inequality(Timestamp, Timestamp)
+- uid: Platform.Timestamps.Timestamp.op_Inequality*
+  name: Inequality
+  href: api/Platform.Timestamps.Timestamp.html#Platform_Timestamps_Timestamp_op_Inequality_
+  commentId: Overload:Platform.Timestamps.Timestamp.op_Inequality
+  isSpec: "True"
+  fullName: Platform.Timestamps.Timestamp.Inequality
+  nameWithType: Timestamp.Inequality
 - uid: Platform.Timestamps.Timestamp.Ticks
   name: Ticks
   href: api/Platform.Timestamps.Timestamp.html#Platform_Timestamps_Timestamp_Ticks
