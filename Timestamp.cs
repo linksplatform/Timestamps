@@ -98,5 +98,23 @@ namespace Platform.Timestamps
         /// <returns><para>A hash code for the current object.</para><para>Хеш-код для текущего объекта.</para></returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public override int GetHashCode() => Ticks.GetHashCode();
+
+        /// <summary>
+        /// <para>Determines if the specified timestamp is equal to the current timestamp.</para>
+        /// <para>Определяет, равна ли указанная метка времени текущей метке времени.</para>
+        /// </summary>
+        /// <param name="left"><para>The current timestamp.</para><para>Текущая метка времени.</para></param>
+        /// <param name="right"><para>A timestamp to compare with this timestamp.</para><para>Метка времени для сравнения с этой меткой времени.</para></param>
+        /// <returns><para>True if the current timestamp is equal to the other timestamp; otherwise, false.</para><para>True, если текущий метка времени равна другой метке времени; иначе false.</para></returns>
+        public static bool operator ==(Timestamp left, Timestamp right) => left.Equals(right);
+
+        /// <summary>
+        /// <para>Determines if the specified timestamp is not equal to the current timestamp.</para>
+        /// <para>Определяет, не равна ли указанная метка времени текущей метке времени.</para>
+        /// </summary>
+        /// <param name="left"><para>The current timestamp.</para><para>Текущая метка времени.</para></param>
+        /// <param name="right"><para>A timestamp to compare with this timestamp.</para><para>Метка времени для сравнения с этой меткой времени.</para></param>
+        /// <returns><para>True if the current timestamp is not equal to the other timestamp; otherwise, false.</para><para>True, если текущий метка времени не равна другой метке времени; иначе false.</para></returns>
+        public static bool operator !=(Timestamp left, Timestamp right) => !(left == right);
     }
 }
