@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
 using Platform.Interfaces;
 
 namespace Platform.Timestamps
@@ -15,6 +16,7 @@ namespace Platform.Timestamps
         /// <para>Creates a timestamp corresponding to the current UTC date and time or next unique timestamp.</para>
         /// <para>Создаёт отмеку времени соответствующую текущей дате и времени по UTC или следующую уникальную отметку времени.</para>
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public Timestamp Create()
         {
             var utcTicks = (ulong)DateTime.UtcNow.Ticks;

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
 
 namespace Platform.Timestamps
 {
@@ -29,6 +30,7 @@ namespace Platform.Timestamps
         /// <para>Создаёт метку времени.</para>
         /// </summary>
         /// <param name="ticks"><para>A number representing the number of ticks.</para><para>Число представляющие количество тиков.</para></param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public Timestamp(ulong ticks) => Ticks = ticks;
 
         /// <summary>
@@ -36,6 +38,7 @@ namespace Platform.Timestamps
         /// <para>Определяет неявное преобразование DateTime в метку времени.</para>
         /// </summary>
         /// <param name="dateTime"><para>The DateTime struct.</para><para>Структура DateTime.</para></param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static implicit operator Timestamp(DateTime dateTime) => new Timestamp((ulong)dateTime.ToUniversalTime().Ticks);
 
         /// <summary>
@@ -43,6 +46,7 @@ namespace Platform.Timestamps
         /// <para>Определяет неявное преобразование метки времени в DateTime.</para>
         /// </summary>
         /// <param name="timestamp"><para>The Timestamp.</para><para>Отметка времени.</para></param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static implicit operator DateTime(Timestamp timestamp) => new DateTime((long)timestamp.Ticks, DateTimeKind.Utc);
 
         /// <summary>
@@ -50,6 +54,7 @@ namespace Platform.Timestamps
         /// <para>Определяет неявное преобразование 64-разрядного целого числа без знака в метку времени.</para>
         /// </summary>
         /// <param name="ticks"><para>The number of ticks represented as a 64-bit integer.</para><para>Количество тиков представленное в виде 64-разрядного целого числа.</para></param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static implicit operator Timestamp(ulong ticks) => new Timestamp(ticks);
 
         /// <summary>
@@ -57,6 +62,7 @@ namespace Platform.Timestamps
         /// <para>Определяет неявное преобразование метки времени в 64-разрядное целое число без знака.</para>
         /// </summary>
         /// <param name="timestamp"><para>The Timestamp.</para><para>Отметка времени.</para></param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static implicit operator ulong(Timestamp timestamp) => timestamp.Ticks;
 
         /// <summary>
@@ -64,6 +70,7 @@ namespace Platform.Timestamps
         /// <para>Возвращает строку, которая представляет текущую метку времени.</para>
         /// </summary>
         /// <returns><para>A string that represents the current Timestamp.</para><para>Строка, представляющая текущую метку времени.</para></returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public override string ToString() => ((DateTime)this).ToString(DefaultFormat);
 
         /// <summary>
@@ -72,6 +79,7 @@ namespace Platform.Timestamps
         /// </summary>
         /// <param name="other"><para>Other Timestamp.</para><para>Другая отметка времени.</para></param>
         /// <returns><para>True if the current Timestamp is equal to the other Timestamp; otherwise, false.</para><para>Истину, если текущая отметка времени равна другой отметке времени; иначе ложь.</para></returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public bool Equals(Timestamp other) => Ticks == other.Ticks;
 
         /// <summary>
@@ -80,6 +88,7 @@ namespace Platform.Timestamps
         /// </summary>
         /// <param name="obj"><para>The object to compare with the current object.</para><para>Объект для сравнения с текущим объектом.</para></param>
         /// <returns><para>True if the specified object is equal to the current object; otherwise, false.</para><para>Истину, если указанный объект равен текущему объекту; иначе ложь.</para></returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public override bool Equals(object obj) => obj is Timestamp timestamp ? Equals(timestamp) : false;
 
         /// <summary>
@@ -87,6 +96,7 @@ namespace Platform.Timestamps
         /// <para>Служит в качестве хэш-функции по умолчанию.</para>
         /// </summary>
         /// <returns><para>A hash code for the current object.</para><para>Хеш-код для текущего объекта.</para></returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public override int GetHashCode() => Ticks.GetHashCode();
     }
 }
