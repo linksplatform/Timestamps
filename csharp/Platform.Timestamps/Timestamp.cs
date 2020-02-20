@@ -106,6 +106,7 @@ namespace Platform.Timestamps
         /// <param name="left"><para>The current timestamp.</para><para>Текущая метка времени.</para></param>
         /// <param name="right"><para>A timestamp to compare with this timestamp.</para><para>Метка времени для сравнения с этой меткой времени.</para></param>
         /// <returns><para>True if the current timestamp is equal to the other timestamp; otherwise, false.</para><para>True, если текущий метка времени равна другой метке времени; иначе false.</para></returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool operator ==(Timestamp left, Timestamp right) => left.Equals(right);
 
         /// <summary>
@@ -115,6 +116,7 @@ namespace Platform.Timestamps
         /// <param name="left"><para>The current timestamp.</para><para>Текущая метка времени.</para></param>
         /// <param name="right"><para>A timestamp to compare with this timestamp.</para><para>Метка времени для сравнения с этой меткой времени.</para></param>
         /// <returns><para>True if the current timestamp is not equal to the other timestamp; otherwise, false.</para><para>True, если текущий метка времени не равна другой метке времени; иначе false.</para></returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool operator !=(Timestamp left, Timestamp right) => !(left == right);
     }
 }
