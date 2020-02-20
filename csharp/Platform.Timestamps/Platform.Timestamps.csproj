@@ -38,11 +38,11 @@ Performance optimizations, issues fix.</PackageReleaseNotes>
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All"/>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
   </ItemGroup>
   
   <ItemGroup>
-    <PackageReference Include="Platform.Interfaces" Version="0.2.2" />
+    <PackageReference Include="Platform.Interfaces" Version="0.3.0" />
   </ItemGroup>
 
 </Project>
