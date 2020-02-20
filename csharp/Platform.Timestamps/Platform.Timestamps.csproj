@@ -4,7 +4,7 @@
     <Description>LinksPlatform's Platform.Timestamps Class Library</Description>
     <Copyright>Konstantin Diachenko</Copyright>
     <AssemblyTitle>Platform.Timestamps</AssemblyTitle>
-    <VersionPrefix>0.0.5</VersionPrefix>
+    <VersionPrefix>0.1.0</VersionPrefix>
     <Authors>Konstantin Diachenko</Authors>
     <TargetFrameworks>net472;netstandard2.0;netstandard2.1</TargetFrameworks>
     <AssemblyName>Platform.Timestamps</AssemblyName>
@@ -24,13 +24,10 @@
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <LangVersion>latest</LangVersion>
-    <PackageReleaseNotes>Lowest supported version of .NET Framework is now 4.7.1.
-Added support for .NET Standard 2.1 (.NET Core 3.0).
-Platform.Interfaces dependency updated from 0.1.1 to 0.2.0.
-Source link enabled.
-Travis CI disabled.
-GitHub Actions enabled.
-Performance optimizations, issues fix.</PackageReleaseNotes>
+    <PackageReleaseNotes>Lowest supported version of .NET Framework is now 4.7.2.
+Platform.Interfaces dependency updated from 0.2.2 to 0.3.0.
+Performance optimizations, bug fix.
+Test added.</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup Condition="$(TargetFramework.StartsWith('net4')) AND '$(MSBuildRuntimeType)' == 'Core' AND '$(OS)' != 'Windows_NT'">
