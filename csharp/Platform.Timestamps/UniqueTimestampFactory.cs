@@ -20,7 +20,8 @@ namespace Platform.Timestamps
         public Timestamp Create()
         {
             var utcTicks = (ulong)DateTime.UtcNow.Ticks;
-            return utcTicks <= _lastTicks ? new Timestamp(_lastTicks++) : new Timestamp(utcTicks);
+            _lastTicks = utcTicks > _lastTicks ? utcTicks : _lastTicks + 1;
+            return new Timestamp(_lastTicks);
         }
     }
 }
