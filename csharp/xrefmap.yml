@@ -1,3 +1,176 @@
 ### YamlMime:XRefMap
 sorted: true
-references: []
+references:
+- uid: Platform.Timestamps
+  name: Platform.Timestamps
+  href: api/Platform.Timestamps.html
+  commentId: N:Platform.Timestamps
+  fullName: Platform.Timestamps
+  nameWithType: Platform.Timestamps
+- uid: Platform.Timestamps.Timestamp
+  name: Timestamp
+  href: api/Platform.Timestamps.Timestamp.html
+  commentId: T:Platform.Timestamps.Timestamp
+  fullName: Platform.Timestamps.Timestamp
+  nameWithType: Timestamp
+- uid: Platform.Timestamps.Timestamp.#ctor(System.UInt64)
+  name: Timestamp(UInt64)
+  href: api/Platform.Timestamps.Timestamp.html#Platform_Timestamps_Timestamp__ctor_System_UInt64_
+  commentId: M:Platform.Timestamps.Timestamp.#ctor(System.UInt64)
+  fullName: Platform.Timestamps.Timestamp.Timestamp(System.UInt64)
+  nameWithType: Timestamp.Timestamp(UInt64)
+- uid: Platform.Timestamps.Timestamp.#ctor*
+  name: Timestamp
+  href: api/Platform.Timestamps.Timestamp.html#Platform_Timestamps_Timestamp__ctor_
+  commentId: Overload:Platform.Timestamps.Timestamp.#ctor
+  isSpec: "True"
+  fullName: Platform.Timestamps.Timestamp.Timestamp
+  nameWithType: Timestamp.Timestamp
+- uid: Platform.Timestamps.Timestamp.DefaultFormat
+  name: DefaultFormat
+  href: api/Platform.Timestamps.Timestamp.html#Platform_Timestamps_Timestamp_DefaultFormat
+  commentId: F:Platform.Timestamps.Timestamp.DefaultFormat
+  fullName: Platform.Timestamps.Timestamp.DefaultFormat
+  nameWithType: Timestamp.DefaultFormat
+- uid: Platform.Timestamps.Timestamp.Equals(Platform.Timestamps.Timestamp)
+  name: Equals(Timestamp)
+  href: api/Platform.Timestamps.Timestamp.html#Platform_Timestamps_Timestamp_Equals_Platform_Timestamps_Timestamp_
+  commentId: M:Platform.Timestamps.Timestamp.Equals(Platform.Timestamps.Timestamp)
+  fullName: Platform.Timestamps.Timestamp.Equals(Platform.Timestamps.Timestamp)
+  nameWithType: Timestamp.Equals(Timestamp)
+- uid: Platform.Timestamps.Timestamp.Equals(System.Object)
+  name: Equals(Object)
+  href: api/Platform.Timestamps.Timestamp.html#Platform_Timestamps_Timestamp_Equals_System_Object_
+  commentId: M:Platform.Timestamps.Timestamp.Equals(System.Object)
+  fullName: Platform.Timestamps.Timestamp.Equals(System.Object)
+  nameWithType: Timestamp.Equals(Object)
+- uid: Platform.Timestamps.Timestamp.Equals*
+  name: Equals
+  href: api/Platform.Timestamps.Timestamp.html#Platform_Timestamps_Timestamp_Equals_
+  commentId: Overload:Platform.Timestamps.Timestamp.Equals
+  isSpec: "True"
+  fullName: Platform.Timestamps.Timestamp.Equals
+  nameWithType: Timestamp.Equals
+- uid: Platform.Timestamps.Timestamp.GetHashCode
+  name: GetHashCode()
+  href: api/Platform.Timestamps.Timestamp.html#Platform_Timestamps_Timestamp_GetHashCode
+  commentId: M:Platform.Timestamps.Timestamp.GetHashCode
+  fullName: Platform.Timestamps.Timestamp.GetHashCode()
+  nameWithType: Timestamp.GetHashCode()
+- uid: Platform.Timestamps.Timestamp.GetHashCode*
+  name: GetHashCode
+  href: api/Platform.Timestamps.Timestamp.html#Platform_Timestamps_Timestamp_GetHashCode_
+  commentId: Overload:Platform.Timestamps.Timestamp.GetHashCode
+  isSpec: "True"
+  fullName: Platform.Timestamps.Timestamp.GetHashCode
+  nameWithType: Timestamp.GetHashCode
+- uid: Platform.Timestamps.Timestamp.op_Equality(Platform.Timestamps.Timestamp,Platform.Timestamps.Timestamp)
+  name: Equality(Timestamp, Timestamp)
+  href: api/Platform.Timestamps.Timestamp.html#Platform_Timestamps_Timestamp_op_Equality_Platform_Timestamps_Timestamp_Platform_Timestamps_Timestamp_
+  commentId: M:Platform.Timestamps.Timestamp.op_Equality(Platform.Timestamps.Timestamp,Platform.Timestamps.Timestamp)
+  fullName: Platform.Timestamps.Timestamp.Equality(Platform.Timestamps.Timestamp, Platform.Timestamps.Timestamp)
+  nameWithType: Timestamp.Equality(Timestamp, Timestamp)
+- uid: Platform.Timestamps.Timestamp.op_Equality*
+  name: Equality
+  href: api/Platform.Timestamps.Timestamp.html#Platform_Timestamps_Timestamp_op_Equality_
+  commentId: Overload:Platform.Timestamps.Timestamp.op_Equality
+  isSpec: "True"
+  fullName: Platform.Timestamps.Timestamp.Equality
+  nameWithType: Timestamp.Equality
+- uid: Platform.Timestamps.Timestamp.op_Implicit(Platform.Timestamps.Timestamp)~System.DateTime
+  name: Implicit(Timestamp to DateTime)
+  href: api/Platform.Timestamps.Timestamp.html#Platform_Timestamps_Timestamp_op_Implicit_Platform_Timestamps_Timestamp__System_DateTime
+  commentId: M:Platform.Timestamps.Timestamp.op_Implicit(Platform.Timestamps.Timestamp)~System.DateTime
+  name.vb: Widening(Timestamp to DateTime)
+  fullName: Platform.Timestamps.Timestamp.Implicit(Platform.Timestamps.Timestamp to System.DateTime)
+  fullName.vb: Platform.Timestamps.Timestamp.Widening(Platform.Timestamps.Timestamp to System.DateTime)
+  nameWithType: Timestamp.Implicit(Timestamp to DateTime)
+  nameWithType.vb: Timestamp.Widening(Timestamp to DateTime)
+- uid: Platform.Timestamps.Timestamp.op_Implicit(Platform.Timestamps.Timestamp)~System.UInt64
+  name: Implicit(Timestamp to UInt64)
+  href: api/Platform.Timestamps.Timestamp.html#Platform_Timestamps_Timestamp_op_Implicit_Platform_Timestamps_Timestamp__System_UInt64
+  commentId: M:Platform.Timestamps.Timestamp.op_Implicit(Platform.Timestamps.Timestamp)~System.UInt64
+  name.vb: Widening(Timestamp to UInt64)
+  fullName: Platform.Timestamps.Timestamp.Implicit(Platform.Timestamps.Timestamp to System.UInt64)
+  fullName.vb: Platform.Timestamps.Timestamp.Widening(Platform.Timestamps.Timestamp to System.UInt64)
+  nameWithType: Timestamp.Implicit(Timestamp to UInt64)
+  nameWithType.vb: Timestamp.Widening(Timestamp to UInt64)
+- uid: Platform.Timestamps.Timestamp.op_Implicit(System.DateTime)~Platform.Timestamps.Timestamp
+  name: Implicit(DateTime to Timestamp)
+  href: api/Platform.Timestamps.Timestamp.html#Platform_Timestamps_Timestamp_op_Implicit_System_DateTime__Platform_Timestamps_Timestamp
+  commentId: M:Platform.Timestamps.Timestamp.op_Implicit(System.DateTime)~Platform.Timestamps.Timestamp
+  name.vb: Widening(DateTime to Timestamp)
+  fullName: Platform.Timestamps.Timestamp.Implicit(System.DateTime to Platform.Timestamps.Timestamp)
+  fullName.vb: Platform.Timestamps.Timestamp.Widening(System.DateTime to Platform.Timestamps.Timestamp)
+  nameWithType: Timestamp.Implicit(DateTime to Timestamp)
+  nameWithType.vb: Timestamp.Widening(DateTime to Timestamp)
+- uid: Platform.Timestamps.Timestamp.op_Implicit(System.UInt64)~Platform.Timestamps.Timestamp
+  name: Implicit(UInt64 to Timestamp)
+  href: api/Platform.Timestamps.Timestamp.html#Platform_Timestamps_Timestamp_op_Implicit_System_UInt64__Platform_Timestamps_Timestamp
+  commentId: M:Platform.Timestamps.Timestamp.op_Implicit(System.UInt64)~Platform.Timestamps.Timestamp
+  name.vb: Widening(UInt64 to Timestamp)
+  fullName: Platform.Timestamps.Timestamp.Implicit(System.UInt64 to Platform.Timestamps.Timestamp)
+  fullName.vb: Platform.Timestamps.Timestamp.Widening(System.UInt64 to Platform.Timestamps.Timestamp)
+  nameWithType: Timestamp.Implicit(UInt64 to Timestamp)
+  nameWithType.vb: Timestamp.Widening(UInt64 to Timestamp)
+- uid: Platform.Timestamps.Timestamp.op_Implicit*
+  name: Implicit
+  href: api/Platform.Timestamps.Timestamp.html#Platform_Timestamps_Timestamp_op_Implicit_
+  commentId: Overload:Platform.Timestamps.Timestamp.op_Implicit
+  isSpec: "True"
+  name.vb: Widening
+  fullName: Platform.Timestamps.Timestamp.Implicit
+  fullName.vb: Platform.Timestamps.Timestamp.Widening
+  nameWithType: Timestamp.Implicit
+  nameWithType.vb: Timestamp.Widening
+- uid: Platform.Timestamps.Timestamp.op_Inequality(Platform.Timestamps.Timestamp,Platform.Timestamps.Timestamp)
+  name: Inequality(Timestamp, Timestamp)
+  href: api/Platform.Timestamps.Timestamp.html#Platform_Timestamps_Timestamp_op_Inequality_Platform_Timestamps_Timestamp_Platform_Timestamps_Timestamp_
+  commentId: M:Platform.Timestamps.Timestamp.op_Inequality(Platform.Timestamps.Timestamp,Platform.Timestamps.Timestamp)
+  fullName: Platform.Timestamps.Timestamp.Inequality(Platform.Timestamps.Timestamp, Platform.Timestamps.Timestamp)
+  nameWithType: Timestamp.Inequality(Timestamp, Timestamp)
+- uid: Platform.Timestamps.Timestamp.op_Inequality*
+  name: Inequality
+  href: api/Platform.Timestamps.Timestamp.html#Platform_Timestamps_Timestamp_op_Inequality_
+  commentId: Overload:Platform.Timestamps.Timestamp.op_Inequality
+  isSpec: "True"
+  fullName: Platform.Timestamps.Timestamp.Inequality
+  nameWithType: Timestamp.Inequality
+- uid: Platform.Timestamps.Timestamp.Ticks
+  name: Ticks
+  href: api/Platform.Timestamps.Timestamp.html#Platform_Timestamps_Timestamp_Ticks
+  commentId: F:Platform.Timestamps.Timestamp.Ticks
+  fullName: Platform.Timestamps.Timestamp.Ticks
+  nameWithType: Timestamp.Ticks
+- uid: Platform.Timestamps.Timestamp.ToString
+  name: ToString()
+  href: api/Platform.Timestamps.Timestamp.html#Platform_Timestamps_Timestamp_ToString
+  commentId: M:Platform.Timestamps.Timestamp.ToString
+  fullName: Platform.Timestamps.Timestamp.ToString()
+  nameWithType: Timestamp.ToString()
+- uid: Platform.Timestamps.Timestamp.ToString*
+  name: ToString
+  href: api/Platform.Timestamps.Timestamp.html#Platform_Timestamps_Timestamp_ToString_
+  commentId: Overload:Platform.Timestamps.Timestamp.ToString
+  isSpec: "True"
+  fullName: Platform.Timestamps.Timestamp.ToString
+  nameWithType: Timestamp.ToString
+- uid: Platform.Timestamps.UniqueTimestampFactory
+  name: UniqueTimestampFactory
+  href: api/Platform.Timestamps.UniqueTimestampFactory.html
+  commentId: T:Platform.Timestamps.UniqueTimestampFactory
+  fullName: Platform.Timestamps.UniqueTimestampFactory
+  nameWithType: UniqueTimestampFactory
+- uid: Platform.Timestamps.UniqueTimestampFactory.Create
+  name: Create()
+  href: api/Platform.Timestamps.UniqueTimestampFactory.html#Platform_Timestamps_UniqueTimestampFactory_Create
+  commentId: M:Platform.Timestamps.UniqueTimestampFactory.Create
+  fullName: Platform.Timestamps.UniqueTimestampFactory.Create()
+  nameWithType: UniqueTimestampFactory.Create()
+- uid: Platform.Timestamps.UniqueTimestampFactory.Create*
+  name: Create
+  href: api/Platform.Timestamps.UniqueTimestampFactory.html#Platform_Timestamps_UniqueTimestampFactory_Create_
+  commentId: Overload:Platform.Timestamps.UniqueTimestampFactory.Create
+  isSpec: "True"
+  fullName: Platform.Timestamps.UniqueTimestampFactory.Create
+  nameWithType: UniqueTimestampFactory.Create
