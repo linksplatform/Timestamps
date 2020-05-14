@@ -7,14 +7,14 @@
 
 LinksPlatform's Platform.Timestamps Class Library
 
-Namespace: [Platform.Timestamps](https://linksplatform.github.io/Timestamps/api/Platform.Timestamps.html)
+Namespace: [Platform.Timestamps](https://linksplatform.github.io/Timestamps/csharp/api/Platform.Timestamps.html)
 
 Forked from: [Konard/LinksPlatform/Platform/Platform.Helpers/Timestamps](https://github.com/Konard/LinksPlatform/tree/0c85f236b75e6e3110790008b1a379c03c954501/Platform/Platform.Helpers/Timestamps)
 
 NuGet package: [Platform.Timestamps](https://www.nuget.org/packages/Platform.Timestamps)
 
 ## [Documentation](https://linksplatform.github.io/Timestamps)
-[PDF file](https://linksplatform.github.io/Timestamps/Platform.Timestamps.pdf) with code for e-readers.
+[PDF file](https://linksplatform.github.io/Timestamps/csharp/Platform.Timestamps.pdf) with code for e-readers.
 
 ## Depend on
 *   [Platform.Interfaces](https://github.com/linksplatform/Interfaces)
