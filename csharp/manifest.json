@@ -30,7 +30,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Timestamps.Timestamp.html",
-          "hash": "tdL8bFwbLEpkTHDnyYkJJg=="
+          "hash": "tBZsDPZMMY91KVstgCZc5A=="
         }
       },
       "is_incremental": false,
@@ -42,7 +42,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Timestamps.UniqueTimestampFactory.html",
-          "hash": "VWq668s5ugYT8MHvRG6g4w=="
+          "hash": "aJ3bL4W4izhb9n0AjKWMJw=="
         }
       },
       "is_incremental": false,
