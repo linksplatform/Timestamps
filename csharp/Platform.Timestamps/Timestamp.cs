@@ -9,12 +9,12 @@ namespace Platform.Timestamps
     /// </summary>
     /// <remarks>
     /// <para>To make this timestamp truly unique, it is recommended to use <see cref="UniqueTimestampFactory"/>.</para>
-    /// <para>Чтобы эта метка времени была дейстительно уникальна рекомендуется использовать <see cref="UniqueTimestampFactory"/>.</para>
+    /// <para>Чтобы эта метка времени была действительно уникальна рекомендуется использовать <see cref="UniqueTimestampFactory"/>.</para>
     /// </remarks>
     public struct Timestamp : IEquatable<Timestamp>
     {
         /// <summary>
-        /// <para>Returns a string containg the default DateTime format for Timestamp.</para>
+        /// <para>Returns a string containing the default DateTime format for Timestamp.</para>
         /// <para>Возвращает строку, содержащую формат даты и времени по умолчанию для метки времени.</para>
         /// </summary>
         public static readonly string DefaultFormat = "yyyy.MM.dd hh:mm:ss.fffffff";

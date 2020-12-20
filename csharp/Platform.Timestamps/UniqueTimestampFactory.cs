@@ -14,7 +14,7 @@ namespace Platform.Timestamps
 
         /// <summary>
         /// <para>Creates a timestamp corresponding to the current UTC date and time or next unique timestamp.</para>
-        /// <para>Создаёт отмеку времени соответствующую текущей дате и времени по UTC или следующую уникальную отметку времени.</para>
+        /// <para>Создаёт отметку времени соответствующую текущей дате и времени по UTC или следующую уникальную отметку времени.</para>
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public Timestamp Create()
