@@ -15,15 +15,12 @@ namespace Platform::Timestamps
 		// probably gonna remove that
 
         operator uint64_t() const { return this->Ticks; } // I REALLY want to rename this to sth like
-													   // operator uint64_t, but the compatibility may
-													   // be ruined
+                                                          // operator uint64_t, but the compatibility may be ruined
         bool operator ==(const Timestamp &other) const { return Ticks == other.getTicks; }
         bool operator !=(const Timestamp &other) const { return Ticks != other.getTicks; }
         override std::string ToString() { return ((DateTime)this).ToString(DefaultFormat); }
-        override int32_t GetHashCode() { return Ticks.GetHashCode(); } // The std::hash method
-																			// is available in
-																			// the <functional> header;
-																			// shall we include it?
+        override int32_t GetHashCode() { return Ticks.GetHashCode(); } // The std::hash method is available in
+                                                                       // the <functional> header;  shall we include it?
 		uint64_t getTicks() const { return this->Ticks; }
 	private:
         uint64_t Ticks;
@@ -31,5 +28,5 @@ namespace Platform::Timestamps
 
 	Timestamp::Timestamp(const uint64_t &ticks) : Ticks(ticks) { }
 
-    Timestamp::Timestamp(const DateTime &dateTime) : Timestamp((uint64_t)dateTime.ToUniversalTime().Ticks) { }
+	Timestamp::Timestamp(const DateTime &dateTime) : Timestamp((uint64_t)dateTime.ToUniversalTime().Ticks) { }
 }
