@@ -1,7 +1,7 @@
 ﻿#pragma once
 
 #include <string>
-#include "CommonEraClock.hpp"
+#include "CommonEraClock.h"
 
 namespace Platform::Timestamps
 {
@@ -10,6 +10,7 @@ namespace Platform::Timestamps
 	public:
 	    Timestamp(const uint64_t &ticks) : Ticks(ticks) { }
         Timestamp(const CommonEraClock &clock) : Ticks(CommonEraClock::now().time_since_epoch().count()) { }
+        Timestamp() : Ticks(0) { }
         
         const inline static std::string DefaultFormat = "yyyy.MM.dd hh:mm:ss.fffffff";
         bool operator ==(const Timestamp &other) const { return Ticks == other.getTicks(); }
