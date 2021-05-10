@@ -12,7 +12,9 @@ namespace Platform::Timestamps
     {
 	public:
         Timestamp(const uint64_t &ticks) : _ticks(ticks) { }
-        Timestamp(const std::chrono::time_point<CommonEraClock> &tp) : _ticks(tp.time_since_epoch().count()) { }
+        Timestamp(const std::chrono::time_point<CommonEraClock> &common_time_point)
+            : _ticks(common_time_point.time_since_epoch().count()) { }
+        Timestamp(const Timestamp& timestamp) : _ticks(timestamp.Ticks()) {}
         Timestamp() : _ticks(0) { }
 
         bool operator ==(const Timestamp &other) const { return _ticks == other.Ticks(); }

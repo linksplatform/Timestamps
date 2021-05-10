@@ -2,9 +2,10 @@
 
 #include <chrono>
 
+static constexpr uint64_t TICKS_AFTER_AD = 621355968000000000;
+
 struct CommonEraClock
 {
-    static constexpr uint64_t ticks_after_ad = 621355968000000000;
     using ticks = std::chrono::duration<uint64_t, std::ratio_multiply<std::nano, std::ratio<100> > >;
     using duration = ticks;
     using rep = duration::rep;
@@ -15,7 +16,7 @@ struct CommonEraClock
         static duration time_since_epoch()
         {
             return std::chrono::duration_cast<duration>
-                (std::chrono::system_clock::now().time_since_epoch()) + duration(ticks_after_ad);
+                (std::chrono::system_clock::now().time_since_epoch()) + duration(TICKS_AFTER_AD);
         }
 
         static time_point now() noexcept
@@ -28,14 +29,14 @@ struct CommonEraClock
         {
             return std::chrono::time_point<std::chrono::system_clock, std::chrono::seconds>
                     (std::chrono::duration_cast<std::chrono::seconds>(common_time_point.time_since_epoch())
-                            - std::chrono::duration_cast<std::chrono::seconds>(duration(ticks_after_ad)));
+                            - std::chrono::duration_cast<std::chrono::seconds>(duration(TICKS_AFTER_AD)));
         }
 
         static time_point from_sys(const std::chrono::time_point
             <std::chrono::system_clock, std::chrono::seconds>& sys_time_point) noexcept
         {
             return time_point(std::chrono::duration_cast<duration>(sys_time_point.time_since_epoch())
-                + duration(ticks_after_ad));
+                + duration(TICKS_AFTER_AD));
         }
 
         static uint64_t to_ticks(const time_point& common_time_point) noexcept
