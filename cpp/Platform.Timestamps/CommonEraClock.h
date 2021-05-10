@@ -4,7 +4,7 @@
 
 struct CommonEraClock
 {
-	static inline const uint64_t ticks_after_ad = 621355968000000000;
+	static constexpr uint64_t ticks_after_ad = 621355968000000000;
 	using ticks = std::chrono::duration<uint64_t, std::ratio_multiply<std::nano, std::ratio<100> > >;
 	using duration = ticks;
 	using rep = duration::rep;
