@@ -27,12 +27,13 @@ struct CommonEraClock
 	static std::chrono::time_point<std::chrono::system_clock, std::chrono::seconds> to_sys(const time_point& tp) noexcept
 	{
 		return std::chrono::time_point<std::chrono::system_clock, std::chrono::seconds>
-		        (std::chrono::duration_cast<std::chrono::seconds>(tp.time_since_epoch() - ticks_after_ad));
+		        (std::chrono::duration_cast<std::chrono::seconds>(tp.time_since_epoch())
+		                - std::chrono::seconds(ticks_after_ad));
 	}
 
 	static time_point from_sys(const std::chrono::time_point<std::chrono::system_clock, std::chrono::seconds>& tp) noexcept
 	{
-		return time_point(std::chrono::duration_cast<duration>(tp.time_since_epoch() + ticks_after_ad));
+		return time_point(std::chrono::duration_cast<duration>(tp.time_since_epoch()) + hundred_nanoseconds(ticks_after_ad));
 	}
 
 	static uint64_t to_ticks(const time_point& tp) noexcept
@@ -42,7 +43,7 @@ struct CommonEraClock
 
 	static time_point from_ticks(const uint64_t& tick_number) noexcept
 	{
-		return time_point(tick_number);
+		return time_point(hundred_nanoseconds(tick_number));
 	}
 
 	static std::time_t to_time_t(const time_point& tp) noexcept
