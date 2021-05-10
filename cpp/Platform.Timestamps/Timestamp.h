@@ -17,19 +17,27 @@ namespace Platform::Timestamps
 
         bool operator ==(const Timestamp &other) const { return _ticks == other.Ticks(); }
 
-		uint64_t Ticks() const noexcept { return this->_ticks; }
+		uint64_t Ticks() const noexcept { return _ticks; }
 		uint64_t Ticks(const uint64_t& t)
 		{
-	    	this->_ticks = t;
+	    	_ticks = t;
+	    	return t;
 		}
-        std::string ToString()
+
+        operator std::string() const
         {
-        	std::time_t timer = CommonEraClock::to_time_t(CommonEraClock::from_ticks(ticks));
+        	std::time_t timer = CommonEraClock::to_time_t(CommonEraClock::from_ticks(_ticks));
         	std::string temp = std::to_string(_ticks);
         	std::stringstream stringStream;
         	stringStream << std::put_time(std::gmtime(&timer), _defaultFormat.c_str()) << temp.substr(temp.length() - 7);
         	return stringStream.str();
         }
+
+        friend std::ostream& operator<<(std::ostream& out, const Timestamp& timestamp)
+        {
+			return out << std::string(timestamp);
+        }
+
 	private:
         uint64_t _ticks;
 	    const std::string _defaultFormat = "%Y.%m.%d %H:%M:%S.";
@@ -38,6 +46,11 @@ namespace Platform::Timestamps
 
 namespace std
 {
+	std::string to_string(const Platform::Timestamps::Timestamp& timestamp) noexcept
+	{
+		return std::string(timestamp);
+	}
+
 	template<>
 	struct hash<Platform::Timestamps::Timestamp>
 	{
