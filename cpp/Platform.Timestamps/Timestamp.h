@@ -6,14 +6,12 @@
 #include <functional>
 #include "CommonEraClock.h"
 
-
-
 namespace Platform::Timestamps
 {
     class Timestamp
     {
 	public:
-        static inline const std::string DefaultFormat = "%Y.%m.%d %H:%M:%S";
+        static constexpr const char* DefaultFormat = "%Y.%m.%d %H:%M:%S";
         static constexpr int TicksPerSecond = 10000000;
 
         Timestamp(const uint64_t &ticks) : _ticks(ticks) { }
@@ -26,11 +24,11 @@ namespace Platform::Timestamps
         void Ticks(const uint64_t& ticks)   { _ticks = ticks; }
 
         bool operator ==(const Timestamp &other) const { return _ticks == other.Ticks(); }
-        operator std::string() const
+        explicit operator std::string() const
         {
             std::time_t time = CommonEraClock::to_time_t(CommonEraClock::from_ticks(_ticks));
             std::stringstream stream;
-        	stream << std::put_time(std::gmtime(&time), DefaultFormat.c_str())
+        	stream << std::put_time(std::gmtime(&time), DefaultFormat)
                 << '.' << _ticks % TicksPerSecond;
             return stream.str();
         }
