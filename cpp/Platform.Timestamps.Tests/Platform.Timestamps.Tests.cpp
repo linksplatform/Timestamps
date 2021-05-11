@@ -10,7 +10,7 @@ namespace Platform::Timestamps::Tests
             Timestamp t1;
             Timestamp t2(std::chrono::duration_cast<std::chrono::duration
                     <uint64_t, std::ratio_multiply<std::nano, std::ratio<100> > > >
-                        (std::chrono::system_clock::now().time_since_epoch()).count() + 621355968000000000);
+                        (std::chrono::system_clock::now().time_since_epoch()).count() + TICKS_AFTER_AD);
             ASSERT_NE(t1, t2);
         }
 
