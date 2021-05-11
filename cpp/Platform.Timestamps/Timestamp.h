@@ -12,7 +12,7 @@ namespace Platform::Timestamps
     {
 	public:
         static constexpr const char* DefaultFormat = "%Y.%m.%d %H:%M:%S";
-        static constexpr const int TicksPerSecond = 10000000;
+        static constexpr int TicksPerSecond = 10000000;
 
         Timestamp(const uint64_t &ticks) : _ticks(ticks) { }
         Timestamp(const std::chrono::time_point<CommonEraClock> &common_time_point)
