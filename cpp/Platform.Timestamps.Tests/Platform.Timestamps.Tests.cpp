@@ -34,7 +34,7 @@ namespace Platform::Timestamps::Tests
         }
 
         {
-            ASSERT_EQ(std::to_string(t1), std::to_string(t2));
+            ASSERT_EQ(std::string(t1), std::string(t2));
         }
 
         {
@@ -57,11 +57,11 @@ namespace Platform::Timestamps::Tests
             if (a == b)
             {
                 ASSERT_EQ(Timestamp(a), Timestamp(b));
-                ASSERT_EQ(std::to_string(Timestamp(a)), std::to_string(Timestamp(b)));
+                ASSERT_EQ(std::string(Timestamp(a)), std::string(Timestamp(b)));
             } else
             {
                 ASSERT_NE(Timestamp(a), Timestamp(b));
-                ASSERT_NE(std::to_string(Timestamp(a)), std::to_string(Timestamp(b)));
+                ASSERT_NE(std::string(Timestamp(a)), std::string(Timestamp(b)));
             }
         }
     }

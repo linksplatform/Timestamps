@@ -17,18 +17,17 @@ namespace Platform::Timestamps
         Timestamp(const Timestamp& timestamp) : _ticks(timestamp.Ticks()) {}
         Timestamp() : _ticks(0) { }
 
-        bool operator ==(const Timestamp &other) const { return _ticks == other.Ticks(); }
-
         uint64_t Ticks() const noexcept { return _ticks; }
         void Ticks(const uint64_t& ticks)   { _ticks = ticks; }
 
+        bool operator ==(const Timestamp &other) const { return _ticks == other.Ticks(); }
         operator std::string() const
         {
             std::time_t time = CommonEraClock::to_time_t(CommonEraClock::from_ticks(_ticks));
-            std::stringstream stringStream;
-        	stringStream << std::put_time(std::gmtime(&time), _defaultFormat.c_str())
+            std::stringstream stream;
+        	stream << std::put_time(std::gmtime(&time), _defaultFormat.c_str())
                 << '.' << _ticks % 10000000;
-            return stringStream.str();
+            return stream.str();
         }
 
         friend std::ostream& operator<<(std::ostream& out, const Timestamp& timestamp)
@@ -42,19 +41,11 @@ namespace Platform::Timestamps
     };
 }
 
-namespace std
+template<>
+struct std::hash<Platform::Timestamps::Timestamp>
 {
-    std::string to_string(const Platform::Timestamps::Timestamp& timestamp) noexcept
+    size_t operator()(const Platform::Timestamps::Timestamp& timestamp) noexcept
     {
-        return std::string(timestamp);
+        return std::hash<uint64_t>{}(timestamp.Ticks());
     }
-
-    template<>
-    struct hash<Platform::Timestamps::Timestamp>
-    {
-        size_t operator()(const Platform::Timestamps::Timestamp& timestamp) noexcept
-        {
-            return std::hash<uint64_t>{}(timestamp.Ticks());
-        }
-    };
-}
+};
