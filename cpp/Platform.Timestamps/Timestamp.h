@@ -6,11 +6,16 @@
 #include <functional>
 #include "CommonEraClock.h"
 
+
+
 namespace Platform::Timestamps
 {
     class Timestamp
     {
 	public:
+        static inline const std::string DefaultFormat = "%Y.%m.%d %H:%M:%S";
+        static constexpr int TicksPerSecond = 10000000;
+
         Timestamp(const uint64_t &ticks) : _ticks(ticks) { }
         Timestamp(const std::chrono::time_point<CommonEraClock> &common_time_point)
             : _ticks(common_time_point.time_since_epoch().count()) { }
@@ -25,8 +30,8 @@ namespace Platform::Timestamps
         {
             std::time_t time = CommonEraClock::to_time_t(CommonEraClock::from_ticks(_ticks));
             std::stringstream stream;
-        	stream << std::put_time(std::gmtime(&time), _defaultFormat.c_str())
-                << '.' << _ticks % 10000000;
+        	stream << std::put_time(std::gmtime(&time), DefaultFormat.c_str())
+                << '.' << _ticks % TicksPerSecond;
             return stream.str();
         }
 
@@ -34,10 +39,8 @@ namespace Platform::Timestamps
         {
             return out << std::string(timestamp);
         }
-
     private:
         uint64_t _ticks;
-        const std::string _defaultFormat = "%Y.%m.%d %H:%M:%S";
     };
 }
 
