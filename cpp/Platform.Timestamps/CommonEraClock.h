@@ -4,24 +4,23 @@
 
 namespace Platform::Timestamps
 {
-
     struct CommonEraClock
     {
-        static constexpr uint64_t TICKS_AFTER_ANNO_DOMINI = 621355968000000000;
         using ticks = std::chrono::duration<uint64_t, std::ratio_multiply<std::nano, std::ratio<100> > >;
         using duration = ticks;
         using rep = duration::rep;
         using period = duration::period;
         using time_point = std::chrono::time_point<CommonEraClock>;
-        static const bool is_steady = false;
+        static constexpr bool is_steady = false;
+        static constexpr uint64_t ticks_after_anno_domini = 621355968000000000;
 
         static duration time_since_epoch()
         {
             return std::chrono::duration_cast<duration>
-                (std::chrono::system_clock::now().time_since_epoch()) + duration(TICKS_AFTER_ANNO_DOMINI);
+                (std::chrono::system_clock::now().time_since_epoch()) + duration(ticks_after_anno_domini);
         }
 
-        static time_point now() noexcept
+        static time_point now()
         {
             return time_point(time_since_epoch());
         }
@@ -31,14 +30,14 @@ namespace Platform::Timestamps
         {
             return std::chrono::time_point<std::chrono::system_clock, std::chrono::seconds>
                 (std::chrono::duration_cast<std::chrono::seconds>(common_time_point.time_since_epoch())
-                     - std::chrono::duration_cast<std::chrono::seconds>(duration(TICKS_AFTER_ANNO_DOMINI)));
+                     - std::chrono::duration_cast<std::chrono::seconds>(duration(ticks_after_anno_domini)));
         }
 
         static time_point from_sys(const std::chrono::time_point
-            <std::chrono::system_clock, std::chrono::seconds> &sys_time_point) noexcept
+            <std::chrono::system_clock, std::chrono::system_clock::duration>& sys_time_point) noexcept
         {
             return time_point(std::chrono::duration_cast<duration>(sys_time_point.time_since_epoch())
-                                  + duration(TICKS_AFTER_ANNO_DOMINI));
+                                  + duration(ticks_after_anno_domini));
         }
 
         static uint64_t to_ticks(const time_point &common_time_point) noexcept
@@ -46,7 +45,7 @@ namespace Platform::Timestamps
             return common_time_point.time_since_epoch().count();
         }
 
-        static time_point from_ticks(const uint64_t &tick_number) noexcept
+        static time_point from_ticks(uint64_t tick_number) noexcept
         {
             return time_point(duration(tick_number));
         }
@@ -62,4 +61,4 @@ namespace Platform::Timestamps
                 (std::chrono::time_point<CommonEraClock, duration>(std::chrono::seconds(time)));
         }
     };
-}
+} // namespace Platform::Timestamps
