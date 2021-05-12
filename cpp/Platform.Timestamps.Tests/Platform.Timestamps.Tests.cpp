@@ -1,5 +1,4 @@
-﻿#include <Timestamp.h>
-#include <UniqueTimestampFactory.h>
+﻿#include <Platform.Timestamps.h>
 #include <gtest/gtest.h>
 
 namespace Platform::Timestamps::Tests
