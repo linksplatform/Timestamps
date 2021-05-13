@@ -59,7 +59,7 @@ namespace Platform::Timestamps
 template<>
 struct std::hash<Platform::Timestamps::Timestamp>
 {
-    const size_t operator()(const Platform::Timestamps::Timestamp& timestamp) const noexcept
+    size_t operator()(const Platform::Timestamps::Timestamp& timestamp) const noexcept
     {
         return std::hash<uint64_t>{}(timestamp.Ticks());
     }
