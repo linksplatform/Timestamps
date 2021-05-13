@@ -37,11 +37,16 @@ namespace Platform::Timestamps::Tests
 
     TEST(TimestampsTest, UniqueFactoryTest)
     {
-        {
-            auto factory = UniqueTimestampFactory();
-            auto timestamp1 = factory.Create();
-            auto timestamp2 = factory.Create();
-            ASSERT_NE(timestamp1, timestamp2);
-        }
+        auto factory = UniqueTimestampFactory();
+        auto timestamp1 = factory.Create();
+        auto timestamp2 = factory.Create();
+        ASSERT_NE(timestamp1, timestamp2);
+
+    }
+
+    TEST(TimestampsTest, HashTest)
+    {
+        Timestamp timestamp = CommonEraClock::from_sys(std::chrono::system_clock::now());
+        ASSERT_EQ(std::hash<Timestamp>{}(timestamp), timestamp.Ticks());
     }
 }
