@@ -1,6 +1,6 @@
 ﻿#pragma once
 
-#include <functional>
+#include <typeindex>
 #include <iomanip>
 #include <sstream>
 #include <string>
@@ -59,7 +59,7 @@ namespace Platform::Timestamps
 template<>
 struct std::hash<Platform::Timestamps::Timestamp>
 {
-    const size_t operator()(const Platform::Timestamps::Timestamp& timestamp) noexcept
+    const size_t operator()(const Platform::Timestamps::Timestamp& timestamp) const noexcept
     {
         return std::hash<uint64_t>{}(timestamp.Ticks());
     }
