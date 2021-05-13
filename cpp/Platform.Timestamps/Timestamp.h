@@ -10,12 +10,12 @@ namespace Platform::Timestamps
 {
     class Timestamp
     {
-        uint64_t _ticks;
+        std::uint64_t _ticks;
     public:
         static constexpr const char* DefaultFormat = "%Y.%m.%d %H:%M:%S";
-        static constexpr uint64_t TicksPerSecond = 10'000'000;
+        static constexpr std::uint64_t TicksPerSecond = 10'000'000;
 
-        constexpr Timestamp(const uint64_t& ticks)
+        constexpr Timestamp(const std::uint64_t& ticks) noexcept
             : _ticks(ticks)
         {
         }
@@ -29,11 +29,11 @@ namespace Platform::Timestamps
         }
         constexpr Timestamp() = default;
 
-        constexpr uint64_t Ticks() const noexcept
+        constexpr std::uint64_t Ticks() const noexcept
         {
             return _ticks;
         }
-        void Ticks(uint64_t ticks)
+        void Ticks(std::uint64_t ticks)
         {
             _ticks = ticks;
         }
@@ -59,8 +59,8 @@ namespace Platform::Timestamps
 template<>
 struct std::hash<Platform::Timestamps::Timestamp>
 {
-    size_t operator()(const Platform::Timestamps::Timestamp& timestamp) const noexcept
+    std::size_t operator()(const Platform::Timestamps::Timestamp& timestamp) const noexcept
     {
-        return std::hash<uint64_t>{}(timestamp.Ticks());
+        return std::hash<std::uint64_t>{}(timestamp.Ticks());
     }
 };
