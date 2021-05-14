@@ -46,7 +46,10 @@ namespace Platform::Timestamps::Tests
 
     TEST(TimestampsTest, HashTest)
     {
-        Timestamp timestamp = CommonEraClock::from_sys(std::chrono::system_clock::now());
-        ASSERT_EQ(std::hash<Timestamp>{}(timestamp), timestamp.Ticks());
+        auto timestamp1 = CommonEraClock::from_sys(std::chrono::system_clock::now());
+        auto timestamp2 = timestamp1;
+
+        ASSERT_EQ(timestamp1, timestamp2);
+        ASSERT_EQ(std::hash<Timestamp>{}(timestamp1), std::hash<Timestamp>{}(timestamp2));
     }
 }
