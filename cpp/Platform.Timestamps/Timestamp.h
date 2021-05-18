@@ -34,6 +34,11 @@ namespace Platform::Timestamps
         {
         }
 
+        public: explicit operator std::uint64_t() const
+        {
+            return Ticks;
+        }
+
         public: explicit operator std::string() const
         {
             std::time_t time = common_era_clock::to_time_t(common_era_clock::from_ticks(Ticks));
