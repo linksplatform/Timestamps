@@ -40,12 +40,12 @@ namespace Platform::Timestamps
             return stream.str();
         }
 
+    public: constexpr auto operator<=>(const Timestamp& other) const noexcept = default;
+
     public: friend std::ostream& operator<<(std::ostream& out, const Timestamp& timestamp)
         {
             return out << static_cast<std::string>(timestamp);
         }
-
-    public: constexpr auto operator<=>(const Timestamp& other) const noexcept = default;
 
     public: static constexpr std::uint64_t TicksPerSecond = 10'000'000;
 
