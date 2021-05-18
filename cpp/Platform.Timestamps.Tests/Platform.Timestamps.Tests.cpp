@@ -41,7 +41,6 @@ namespace Platform::Timestamps::Tests
         auto timestamp1 = factory.Create();
         auto timestamp2 = factory.Create();
         ASSERT_NE(timestamp1, timestamp2);
-
     }
 
     TEST(TimestampsTest, HashTest)
