@@ -6,5 +6,4 @@
 #include <Timestamp.h>
 #include <UniqueTimestampFactory.h>
 
-
 #endif // PLATFORM_TIMESTAMPS

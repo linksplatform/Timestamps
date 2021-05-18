@@ -1,19 +1,18 @@
-﻿#include <CommonEraClock.h>
-#include <sstream>
+﻿#include <sstream>
 #include <iomanip>
 #include <sstream>
 #include <string>
 #include <typeindex>
 
+#include "CommonEraClock.h"
+
 namespace Platform::Timestamps
 {
     class Timestamp
     {
-    private: std::uint64_t _ticks;
-
     public: static constexpr const char* DefaultFormat = "%Y.%m.%d %H:%M:%S";
 
-    public: static constexpr std::uint64_t TicksPerSecond = 10'000'000;
+    private: std::uint64_t _ticks;
 
     public: constexpr Timestamp(const std::uint64_t& ticks) noexcept
             : _ticks(ticks)
@@ -32,18 +31,6 @@ namespace Platform::Timestamps
 
     public: constexpr Timestamp() = default;
 
-    public: constexpr std::uint64_t Ticks() const noexcept
-        {
-            return _ticks;
-        }
-
-    public: void Ticks(std::uint64_t ticks)
-        {
-            _ticks = ticks;
-        }
-
-    public: constexpr auto operator<=>(const Timestamp& other) const noexcept = default;
-
     public: explicit operator std::string() const
         {
             std::time_t time = common_era_clock::to_time_t(common_era_clock::from_ticks(_ticks));
@@ -56,6 +43,20 @@ namespace Platform::Timestamps
     public: friend std::ostream& operator<<(std::ostream& out, const Timestamp& timestamp)
         {
             return out << static_cast<std::string>(timestamp);
+        }
+
+    public: constexpr auto operator<=>(const Timestamp& other) const noexcept = default;
+
+    public: static constexpr std::uint64_t TicksPerSecond = 10'000'000;
+
+    public: constexpr std::uint64_t Ticks() const noexcept
+        {
+            return _ticks;
+        }
+
+    public: void Ticks(std::uint64_t ticks)
+        {
+            _ticks = ticks;
         }
     };
 }// namespace Platform::Timestamps
