@@ -1,4 +1,11 @@
-﻿namespace Platform::Timestamps
+﻿#include <CommonEraClock.h>
+#include <sstream>
+#include <iomanip>
+#include <sstream>
+#include <string>
+#include <typeindex>
+
+namespace Platform::Timestamps
 {
     class Timestamp
     {
