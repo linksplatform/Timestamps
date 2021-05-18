@@ -1,16 +1,17 @@
-#pragma once
+#ifndef PLATFORM_TIMESTAMPS_COMMON_ERA_CLOCK
+#define PLATFORM_TIMESTAMPS_COMMON_ERA_CLOCK
 
 #include <chrono>
 
 namespace Platform::Timestamps
 {
-    struct CommonEraClock
+    struct common_era_clock
     {
         using ticks = std::chrono::duration<std::uint64_t, std::ratio_multiply<std::nano, std::ratio<100> > >;
         using duration = ticks;
         using rep = duration::rep;
         using period = duration::period;
-        using time_point = std::chrono::time_point<CommonEraClock>;
+        using time_point = std::chrono::time_point<common_era_clock>;
         static constexpr bool is_steady = false;
         static constexpr std::uint64_t ticks_after_anno_domini = 621355968000000000;
 
@@ -58,7 +59,9 @@ namespace Platform::Timestamps
         static time_point from_time_t(const std::time_t &time)
         {
             return std::chrono::time_point_cast<duration>
-                (std::chrono::time_point<CommonEraClock, duration>(std::chrono::seconds(time)));
+                (std::chrono::time_point<common_era_clock, duration>(std::chrono::seconds(time)));
         }
     };
 } // namespace Platform::Timestamps
+
+#endif // PLATFORM_TIMESTAMPS_COMMON_ERA_CLOCK
