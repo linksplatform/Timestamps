@@ -25,7 +25,7 @@ namespace Platform::Timestamps::Tests
     {
         std::chrono::time_point<common_era_clock> time1 = common_era_clock::now();
         Platform::Timestamps::Timestamp t1(time1);
-        std::chrono::time_point<common_era_clock> time2 = common_era_clock::from_ticks(t1.Ticks());
+        std::chrono::time_point<common_era_clock> time2 = common_era_clock::from_ticks(t1.Ticks);
         Platform::Timestamps::Timestamp t2(time2.time_since_epoch().count());
 
         ASSERT_EQ(time1, time2);
