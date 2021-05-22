@@ -1,12 +1,4 @@
-﻿#include <sstream>
-#include <iomanip>
-#include <sstream>
-#include <string>
-#include <typeindex>
-
-#include "CommonEraClock.h"
-
-namespace Platform::Timestamps
+﻿namespace Platform::Timestamps
 {
     class Timestamp
     {
@@ -14,12 +6,12 @@ namespace Platform::Timestamps
 
         public: const std::uint64_t Ticks;
 
-        public: constexpr Timestamp(const std::uint64_t& ticks) noexcept
+        public: constexpr Timestamp(std::uint64_t ticks) noexcept
             : Ticks(ticks)
         {
         }
 
-        public: constexpr Timestamp(const std::chrono::time_point<common_era_clock>& common_time_point)
+        public: constexpr Timestamp(const common_era_clock::time_point& common_time_point)
             : Ticks(common_time_point.time_since_epoch().count())
         {
         }
@@ -34,7 +26,7 @@ namespace Platform::Timestamps
         {
         }
 
-        public: explicit operator std::uint64_t() const
+        public: constexpr explicit operator std::uint64_t() const
         {
             return Ticks;
         }

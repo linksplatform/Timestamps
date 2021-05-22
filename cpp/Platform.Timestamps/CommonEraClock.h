@@ -7,7 +7,7 @@ namespace Platform::Timestamps
 {
     struct common_era_clock
     {
-        using ticks = std::chrono::duration<std::uint64_t, std::ratio_multiply<std::nano, std::ratio<100> > >;
+        using ticks = std::chrono::duration<std::uint64_t, std::ratio_multiply<std::nano, std::ratio<100>>>;
         using duration = ticks;
         using rep = duration::rep;
         using period = duration::period;
