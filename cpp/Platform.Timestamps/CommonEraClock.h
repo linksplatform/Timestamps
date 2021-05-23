@@ -41,12 +41,12 @@ namespace Platform::Timestamps
                                   + duration(ticks_after_anno_domini));
         }
 
-        static std::uint64_t to_ticks(const time_point &common_time_point)
+        constexpr static std::uint64_t to_ticks(const time_point &common_time_point)
         {
             return common_time_point.time_since_epoch().count();
         }
 
-        static time_point from_ticks(std::uint64_t tick_number)
+        constexpr static time_point from_ticks(std::uint64_t tick_number)
         {
             return time_point(duration(tick_number));
         }
