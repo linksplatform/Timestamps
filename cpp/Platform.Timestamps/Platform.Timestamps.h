@@ -5,9 +5,8 @@
 
 #include <sstream>
 #include <iomanip>
-#include <sstream>
 #include <string>
-#include <typeindex>
+#include <functional>
 
 #include "CommonEraClock.h"
 

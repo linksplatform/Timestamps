@@ -49,13 +49,16 @@
 
         public: static constexpr std::uint64_t TicksPerSecond = 10'000'000;
     };
-}// namespace Platform::Timestamps
+} // namespace Platform::Timestamps
 
-template<>
-struct std::hash<Platform::Timestamps::Timestamp>
+namespace std
 {
-    std::size_t operator()(const Platform::Timestamps::Timestamp& timestamp) const noexcept
+    template<>
+    struct hash<Platform::Timestamps::Timestamp>
     {
-        return std::hash<std::uint64_t>{}(timestamp.Ticks);
-    }
-};
+        std::size_t operator()(const Platform::Timestamps::Timestamp& timestamp) const noexcept
+        {
+            return std::hash<std::uint64_t>{}(timestamp.Ticks);
+        }
+    };
+}

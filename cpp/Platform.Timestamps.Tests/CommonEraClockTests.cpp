@@ -1,4 +1,9 @@
-﻿namespace Platform::Timestamps::Tests
+﻿#include <Platform.Timestamps.h>
+#include <gtest/gtest.h>
+
+#include <typeindex>
+
+namespace Platform::Timestamps::Tests
 {
     TEST(TimestampsTest, TimestampEquality)
     {

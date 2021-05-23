@@ -26,6 +26,6 @@ if(NOT googletest_POPULATED)
     add_subdirectory(${googletest_SOURCE_DIR} ${googletest_BINARY_DIR})
 endif()
 
-add_executable(${PROJECT_NAME}.Tests ${PROJECT_NAME}.Tests.cpp)
+add_executable(${PROJECT_NAME}.Tests CommonEraClockTests.cpp UniqueTimestampFactoryTests.cpp)
 set_target_properties(${PROJECT_NAME}.Tests PROPERTIES CXX_STANDARD 20)
 target_link_libraries(${PROJECT_NAME}.Tests PUBLIC gtest gtest_main)
