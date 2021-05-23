@@ -3,6 +3,7 @@
     class UniqueTimestampFactory
     {
         private: std::uint64_t _lastTicks = 0;
+
         public: Timestamp Create()
         {
             auto utcTicks = common_era_clock::to_ticks(common_era_clock::now());

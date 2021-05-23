@@ -1,8 +1,10 @@
 ﻿namespace Platform::Timestamps
 {
-    class Timestamp
+    struct Timestamp
     {
         public: static constexpr const char* DefaultFormat = "%Y.%m.%d %H:%M:%S";
+
+        public: static constexpr std::uint64_t TicksPerSecond = 10'000'000;
 
         public: const std::uint64_t Ticks;
 
@@ -12,8 +14,13 @@
         }
 
         public: constexpr Timestamp(const common_era_clock::time_point& common_time_point)
-            : Ticks(common_time_point.time_since_epoch().count())
+            : Ticks(common_era_clock::to_ticks(common_time_point))
         {
+        }
+
+        public: constexpr explicit operator common_era_clock::time_point() const
+        {
+            return common_era_clock::from_ticks(Ticks);
         }
 
         public: constexpr Timestamp(const Timestamp& timestamp)
@@ -40,14 +47,12 @@
             return stream.str();
         }
 
-        public: constexpr auto operator<=>(const Timestamp& other) const noexcept = default;
-
         public: friend std::ostream& operator<<(std::ostream& out, const Timestamp& timestamp)
         {
             return out << static_cast<std::string>(timestamp);
         }
 
-        public: static constexpr std::uint64_t TicksPerSecond = 10'000'000;
+        public: constexpr auto operator<=>(const Timestamp& other) const noexcept = default;
     };
 } // namespace Platform::Timestamps
 
