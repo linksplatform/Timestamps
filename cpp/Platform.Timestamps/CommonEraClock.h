@@ -26,16 +26,14 @@ namespace Platform::Timestamps
             return time_point(time_since_epoch());
         }
 
-        static std::chrono::time_point<std::chrono::system_clock, std::chrono::seconds>
-            to_sys(const time_point &common_time_point)
+        static std::chrono::sys_seconds to_sys(const time_point &common_time_point)
         {
-            return std::chrono::time_point<std::chrono::system_clock, std::chrono::seconds>
+            return std::chrono::sys_seconds
                 (std::chrono::duration_cast<std::chrono::seconds>(common_time_point.time_since_epoch())
                      - std::chrono::duration_cast<std::chrono::seconds>(duration(ticks_after_anno_domini)));
         }
 
-        static time_point from_sys(const std::chrono::time_point
-            <std::chrono::system_clock, std::chrono::system_clock::duration>& sys_time_point)
+        static time_point from_sys(const std::chrono::sys_seconds & sys_time_point)
         {
             return time_point(std::chrono::duration_cast<duration>(sys_time_point.time_since_epoch())
                                   + duration(ticks_after_anno_domini));
