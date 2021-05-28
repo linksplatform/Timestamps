@@ -18,7 +18,7 @@
         {
         }
 
-        public: constexpr explicit operator common_era_clock::time_point() const
+        public: constexpr operator common_era_clock::time_point() const
         {
             return common_era_clock::from_ticks(Ticks);
         }
@@ -28,19 +28,14 @@
         {
         }
 
-        public: constexpr Timestamp()
-             : Ticks(0)
-        {
-        }
-
-        public: constexpr explicit operator std::uint64_t() const
+        public: constexpr operator std::uint64_t() const
         {
             return Ticks;
         }
 
-        public: explicit operator std::string() const
+        public: operator std::string() const
         {
-            std::time_t time = common_era_clock::to_time_t(common_era_clock::from_ticks(Ticks));
+            std::time_t time = common_era_clock::to_time_t(*this);
             std::stringstream stream;
             stream << std::put_time(std::gmtime(&time), DefaultFormat)
                    << '.' << Ticks % TicksPerSecond;

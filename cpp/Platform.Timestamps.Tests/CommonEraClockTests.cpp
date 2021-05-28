@@ -7,7 +7,7 @@ namespace Platform::Timestamps::Tests
 {
     TEST(TimestampsTest, TimestampEquality)
     {
-        Timestamp t1;
+        Timestamp t1(0);
         Timestamp t2(common_era_clock::from_sys(std::chrono::system_clock::now()));
         ASSERT_NE(t1, t2);
 
