@@ -4,7 +4,7 @@
     {
         public: static constexpr const char* DefaultFormat = "%Y.%m.%d %H:%M:%S";
 
-        public: static constexpr std::uint64_t TicksPerSecond = 10'000'000; // the number of ticks passed from 0001/01/01 12:00 to 1970/01/01 00:00
+        public: static constexpr std::uint64_t TicksPerSecond = 10'000'000;
 
         public: const std::uint64_t Ticks;
 

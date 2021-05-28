@@ -13,7 +13,7 @@ namespace Platform::Timestamps
         using period = duration::period;
         using time_point = std::chrono::time_point<common_era_clock>;
         static constexpr bool is_steady = false;
-        static constexpr std::uint64_t ticks_after_anno_domini = 621355968000000000;
+        static constexpr std::uint64_t ticks_after_anno_domini = 621355968000000000; // the number of ticks passed from 0001/01/01 12:00 to 1970/01/01 00:00
 
         static duration time_since_epoch()
         {
