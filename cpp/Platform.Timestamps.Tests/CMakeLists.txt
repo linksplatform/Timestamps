@@ -26,7 +26,6 @@ if(NOT googletest_POPULATED)
     add_subdirectory(${googletest_SOURCE_DIR} ${googletest_BINARY_DIR})
 endif()
 
-file(GLOB SRC_FILES *.cpp)
-add_executable(${PROJECT_NAME}.Tests ${SRC_FILES})
+add_executable(${PROJECT_NAME}.Tests AllTests.cpp)
 set_target_properties(${PROJECT_NAME}.Tests PROPERTIES CXX_STANDARD 20)
 target_link_libraries(${PROJECT_NAME}.Tests PUBLIC gtest gtest_main)

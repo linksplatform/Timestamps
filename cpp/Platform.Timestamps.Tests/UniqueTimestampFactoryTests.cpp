@@ -1,6 +1,3 @@
-#include <Platform.Timestamps.h>
-#include <gtest/gtest.h>
-
 namespace Platform::Timestamps::Tests
 {
     TEST(TimestampsTest, UniqueFactoryTest)

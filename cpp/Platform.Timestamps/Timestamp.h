@@ -35,16 +35,16 @@
 
         public: operator std::string() const
         {
-            std::time_t time = common_era_clock::to_time_t(*this);
             std::stringstream stream;
-            stream << std::put_time(std::gmtime(&time), DefaultFormat)
-                   << '.' << Ticks % TicksPerSecond;
+            stream << *this;
             return stream.str();
         }
 
         public: friend std::ostream& operator<<(std::ostream& out, const Timestamp& timestamp)
         {
-            return out << static_cast<std::string>(timestamp);
+            std::time_t time = common_era_clock::to_time_t(timestamp);
+            return out << std::put_time(std::gmtime(&time), DefaultFormat)
+                       << '.' << timestamp.Ticks % TicksPerSecond;
         }
 
         public: constexpr auto operator<=>(const Timestamp& other) const noexcept = default;

@@ -1,9 +1,4 @@
-﻿#include <Platform.Timestamps.h>
-#include <gtest/gtest.h>
-
-#include <typeindex>
-
-namespace Platform::Timestamps::Tests
+﻿namespace Platform::Timestamps::Tests
 {
     TEST(TimestampsTest, TimestampEquality)
     {
@@ -11,7 +6,7 @@ namespace Platform::Timestamps::Tests
         Timestamp t2(common_era_clock::from_sys(std::chrono::system_clock::now()));
         ASSERT_NE(t1, t2);
 
-        std::chrono::time_point<std::chrono::system_clock> time1 = std::chrono::system_clock::now();
+        auto time1 = std::chrono::system_clock::now();
         Timestamp timestamp1(time1.time_since_epoch().count());
         Timestamp timestamp2(timestamp1);
         ASSERT_EQ(timestamp1, timestamp2);
@@ -19,9 +14,9 @@ namespace Platform::Timestamps::Tests
 
     TEST(TimestampsTest, ClockConversion)
     {
-        std::chrono::time_point<common_era_clock> time1 = common_era_clock::now();
+        auto time1 = common_era_clock::now();
         Platform::Timestamps::Timestamp t1(time1);
-        std::chrono::time_point<common_era_clock> time2 = common_era_clock::from_ticks(t1.Ticks);
+        auto time2 = common_era_clock::from_ticks(t1.Ticks);
         Platform::Timestamps::Timestamp t2(time2.time_since_epoch().count());
         ASSERT_EQ(time1, time2);
         ASSERT_EQ(t1, t2);
