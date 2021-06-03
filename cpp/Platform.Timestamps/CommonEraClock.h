@@ -26,7 +26,7 @@ namespace Platform::Timestamps
             return time_point(time_since_epoch());
         }
 
-        static std::chrono::system_clock::time_point to_sys(const time_point& time_point)
+        static std::chrono::system_clock::time_point to_sys(const common_era_clock::time_point& time_point)
         {
             return std::chrono::system_clock::time_point
                 (std::chrono::duration_cast<std::chrono::seconds>(time_point.time_since_epoch())
@@ -39,7 +39,7 @@ namespace Platform::Timestamps
                                   + duration(ticks_between_anno_domini_and_unix_epoch));
         }
 
-        constexpr static std::uint64_t to_ticks(const time_point& time_point)
+        constexpr static std::uint64_t to_ticks(const common_era_clock::time_point& time_point)
         {
             return time_point.time_since_epoch().count();
         }
@@ -49,7 +49,7 @@ namespace Platform::Timestamps
             return time_point(duration(tick_number));
         }
 
-        static std::time_t to_time_t(const time_point& time_point)
+        static std::time_t to_time_t(const common_era_clock::time_point& time_point)
         {
             return std::chrono::system_clock::to_time_t(to_sys(time_point));
         }

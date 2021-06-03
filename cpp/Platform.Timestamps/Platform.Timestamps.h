@@ -7,6 +7,7 @@
 #include <iomanip>
 #include <string>
 #include <functional>
+#include <compare>
 
 #include "CommonEraClock.h"
 
