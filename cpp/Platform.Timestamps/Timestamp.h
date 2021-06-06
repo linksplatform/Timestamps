@@ -1,25 +1,64 @@
 ﻿namespace Platform::Timestamps
 {
-    struct Timestamp : public IEquatable<Timestamp>
+    struct Timestamp
     {
-        public: inline static std::string DefaultFormat = "yyyy.MM.dd hh:mm:ss.fffffff";
+        public: static constexpr const char* DefaultFormat = "%Y.%m.%d %H:%M:%S";
 
-        public: std::uint64_t Ticks = 0;
+        public: static constexpr std::uint64_t TicksPerSecond = 10'000'000;
 
-        public: Timestamp(std::uint64_t ticks) { Ticks = ticks; }
+        public: const std::uint64_t Ticks;
 
-        public: Timestamp(DateTime dateTime) : Timestamp((std::uint64_t)dateTime.ToUniversalTime().Ticks) { }
+        public: constexpr Timestamp(std::uint64_t ticks) noexcept
+            : Ticks(ticks)
+        {
+        }
 
-        public: operator DateTime() const { return DateTime((std::int64_t)this->Ticks, DateTimeKind.Utc); }
+        public: constexpr Timestamp(const common_era_clock::time_point& common_time_point)
+            : Ticks(common_era_clock::to_ticks(common_time_point))
+        {
+        }
 
-        public: Timestamp(std::uint64_t ticks) : Timestamp(ticks) { }
+        public: constexpr operator common_era_clock::time_point() const
+        {
+            return common_era_clock::from_ticks(Ticks);
+        }
 
-        public: operator ulong() const { return this->Ticks; }
+        public: constexpr Timestamp(const Timestamp& timestamp)
+            : Ticks(timestamp.Ticks)
+        {
+        }
 
-        public: override std::string ToString() { return ((DateTime)this).ToString(DefaultFormat); }
+        public: constexpr operator std::uint64_t() const
+        {
+            return Ticks;
+        }
 
-        public: bool operator ==(const Timestamp &other) const { return Ticks == other.Ticks; }
+        public: operator std::string() const
+        {
+            std::stringstream stream;
+            stream << *this;
+            return stream.str();
+        }
 
-        public: override std::int32_t GetHashCode() { return Ticks.GetHashCode(); }
+        public: friend std::ostream& operator<<(std::ostream& out, const Timestamp& timestamp)
+        {
+            std::time_t time = common_era_clock::to_time_t(timestamp);
+            return out << std::put_time(std::gmtime(&time), DefaultFormat)
+                       << '.' << timestamp.Ticks % TicksPerSecond;
+        }
+
+        public: constexpr auto operator<=>(const Timestamp& other) const noexcept = default;
+    };
+} // namespace Platform::Timestamps
+
+namespace std
+{
+    template<>
+    struct hash<Platform::Timestamps::Timestamp>
+    {
+        std::size_t operator()(const Platform::Timestamps::Timestamp& timestamp) const noexcept
+        {
+            return std::hash<std::uint64_t>{}(timestamp.Ticks);
+        }
     };
 }

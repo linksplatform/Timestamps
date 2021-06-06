@@ -1,13 +1,10 @@
-﻿namespace Platform::Timestamps::Tests
+namespace Platform::Timestamps::Tests
 {
-    TEST_CLASS(UniqueTimestampFactoryTests)
+    TEST(TimestampsTest, UniqueFactoryTest)
     {
-        public: TEST_METHOD(UniqueTimestampTest)
-        {
-            auto factory = UniqueTimestampFactory();
-            auto timestamp1 = factory.Create();
-            auto timestamp2 = factory.Create();
-            Assert::AreNotEqual(timestamp1, timestamp2);
-        }
-    };
+        auto factory = UniqueTimestampFactory();
+        auto timestamp1 = factory.Create();
+        auto timestamp2 = factory.Create();
+        ASSERT_NE(timestamp1, timestamp2);
+    }
 }
