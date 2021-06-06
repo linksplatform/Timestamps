@@ -31,8 +31,8 @@ namespace Platform::Timestamps
             using namespace std::chrono;
             return system_clock::time_point
             {
-                duration_cast<system_clock::duration>(time_point.time_since_epoch())
-                - duration_cast<system_clock::duration>(common_era_clock::duration(ticks_between_anno_domini_and_unix_epoch))
+                duration_cast<system_clock::duration>(time_point.time_since_epoch()) -
+                    duration_cast<system_clock::duration>(common_era_clock::duration(ticks_between_anno_domini_and_unix_epoch))
             };
         }
 
