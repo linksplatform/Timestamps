@@ -7,7 +7,7 @@
         ASSERT_NE(t1, t2);
 
         auto time1 = std::chrono::system_clock::now();
-        Timestamp timestamp1(time1.time_since_epoch().count());
+        Timestamp timestamp1(common_era_clock::from_sys(time1));
         Timestamp timestamp2(timestamp1);
         ASSERT_EQ(timestamp1, timestamp2);
     }
