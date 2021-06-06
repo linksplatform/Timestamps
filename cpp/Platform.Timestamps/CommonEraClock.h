@@ -35,7 +35,7 @@ namespace Platform::Timestamps
 
         static time_point from_sys(const std::chrono::system_clock::time_point& time_point)
         {
-            return common_era_clock::time_point(std::chrono::duration_cast<duration>(time_point.time_since_epoch())
+            return common_era_clock::time_point(duration(time_point.time_since_epoch())
                                   + duration(ticks_between_anno_domini_and_unix_epoch));
         }
 
