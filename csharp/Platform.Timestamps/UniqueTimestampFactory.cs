@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Runtime.CompilerServices;
 using Platform.Interfaces;
 
@@ -10,6 +10,12 @@ namespace Platform.Timestamps
     /// </summary>
     public class UniqueTimestampFactory : IFactory<Timestamp>
     {
+        /// <summary>
+        /// <para>
+        /// The last ticks.
+        /// </para>
+        /// <para></para>
+        /// </summary>
         private ulong _lastTicks;
 
         /// <summary>
