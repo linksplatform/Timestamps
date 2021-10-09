@@ -1,5 +1,4 @@
-#ifndef PLATFORM_TIMESTAMPS_COMMON_ERA_CLOCK
-#define PLATFORM_TIMESTAMPS_COMMON_ERA_CLOCK
+#pragma once
 
 #include <chrono>
 
@@ -64,5 +63,3 @@ namespace Platform::Timestamps
         }
     };
 } // namespace Platform::Timestamps
-
-#endif // PLATFORM_TIMESTAMPS_COMMON_ERA_CLOCK
