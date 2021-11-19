@@ -2,20 +2,8 @@ using Xunit;
 
 namespace Platform.Timestamps.Tests
 {
-    /// <summary>
-    /// <para>
-    /// Represents the unique timestamp factory tests.
-    /// </para>
-    /// <para></para>
-    /// </summary>
     public class UniqueTimestampFactoryTests
     {
-        /// <summary>
-        /// <para>
-        /// Tests that unique timestamp test.
-        /// </para>
-        /// <para></para>
-        /// </summary>
         [Fact]
         public void UniqueTimestampTest()
         {
