@@ -3,12 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29020.237
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Platform.Timestamps", "csharp\Platform.Timestamps\Platform.Timestamps.csproj", "{FAAF1BCF-2692-4E05-A440-C9C3AC57CF84}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Platform.Timestamps", "Platform.Timestamps\Platform.Timestamps.csproj", "{FAAF1BCF-2692-4E05-A440-C9C3AC57CF84}"
 	ProjectSection(ProjectDependencies) = postProject
 		{1394B2AC-0B80-4F29-82C3-A610C3BD6BDB} = {1394B2AC-0B80-4F29-82C3-A610C3BD6BDB}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Platform.Timestamps.Tests", "csharp\Platform.Timestamps.Tests\Platform.Timestamps.Tests.csproj", "{AFFDC732-9A47-4B87-BEA4-F426F2550714}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Platform.Timestamps.Tests", "Platform.Timestamps.Tests\Platform.Timestamps.Tests.csproj", "{AFFDC732-9A47-4B87-BEA4-F426F2550714}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpToCppTranslator", "CSharpToCppTranslator\CSharpToCppTranslator.csproj", "{1394B2AC-0B80-4F29-82C3-A610C3BD6BDB}"
 EndProject
