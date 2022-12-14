@@ -39,7 +39,7 @@ Platform.Interfaces dependency is updated from 0.4.0 to 0.4.1.</PackageReleaseNo
   </ItemGroup>
   
   <ItemGroup>
-    <PackageReference Include="Platform.Interfaces" Version="0.4.2" />
+    <PackageReference Include="Platform.Interfaces" Version="0.5.0" />
   </ItemGroup>
 
   <!--
