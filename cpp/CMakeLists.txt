@@ -1,13 +1,22 @@
-cmake_minimum_required(VERSION 3.17)
+cmake_minimum_required(VERSION 3.15)
 
-set(PROJECT_NAME Platform.Timestamps)
-project(${PROJECT_NAME})
+set(LINKS_PLATFORM_TESTS OFF CACHE BOOL "Whether to compile tests")
+set(LINKS_PLATFORM_EXTRA_FLAGS "" CACHE STRING "Extra compiler flags")
 
-add_subdirectory(${PROJECT_NAME})
+set(CONAN_DISABLE_CHECK_COMPILER TRUE)
+set(LINKS_PLATFORM_TESTS TRUE)
 
-macro(INCLUDE_EXTENSION EXT_NAME)
-    add_subdirectory(${PROJECT_NAME}.${EXT_NAME})
-    target_link_libraries(${PROJECT_NAME}.${EXT_NAME} PUBLIC ${PROJECT_NAME}.Library)
-endmacro()
+project(Platform.Timestamps CXX)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+find_package(GTest)
 
-INCLUDE_EXTENSION(Tests)
+add_library(${PROJECT_NAME}.Library INTERFACE)
+target_include_directories(${PROJECT_NAME}.Library INTERFACE ${PROJECT_NAME})
+
+if(${LINKS_PLATFORM_TESTS})
+    add_executable(${PROJECT_NAME}.Tests ${PROJECT_NAME}.Tests/AllTests.cpp)
+    set_target_properties(${PROJECT_NAME}.Tests PROPERTIES CXX_STANDARD 20)
+    target_link_libraries(${PROJECT_NAME}.Tests PRIVATE GTest::gtest)
+    target_link_libraries(${PROJECT_NAME}.Tests PRIVATE GTest::gtest_main)
+    target_link_libraries(${PROJECT_NAME}.Tests PRIVATE ${PROJECT_NAME}.Library)
+endif()
