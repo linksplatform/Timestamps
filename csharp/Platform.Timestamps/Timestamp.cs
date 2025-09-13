@@ -89,7 +89,7 @@ namespace Platform.Timestamps
         /// <param name="obj"><para>The object to compare with the current object.</para><para>Объект для сравнения с текущим объектом.</para></param>
         /// <returns><para>True if the specified object is equal to the current object; otherwise, false.</para><para>Истину, если указанный объект равен текущему объекту; иначе ложь.</para></returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public override bool Equals(object obj) => obj is Timestamp timestamp ? Equals(timestamp) : false;
+        public override bool Equals(object? obj) => obj is Timestamp timestamp ? Equals(timestamp) : false;
 
         /// <summary>
         /// <para>Serves as the default hash function.</para>
