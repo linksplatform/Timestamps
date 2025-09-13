@@ -62,4 +62,7 @@ namespace Platform::Timestamps
                 (std::chrono::time_point<common_era_clock, duration>(std::chrono::seconds(time)));
         }
     };
+
+    static_assert(std::chrono::is_clock_v<common_era_clock>, 
+                  "common_era_clock must satisfy the Clock concept requirements");
 } // namespace Platform::Timestamps
