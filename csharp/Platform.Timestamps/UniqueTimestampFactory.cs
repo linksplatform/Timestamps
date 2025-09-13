@@ -1,5 +1,6 @@
 using System;
 using System.Runtime.CompilerServices;
+using System.Threading;
 using Platform.Interfaces;
 
 namespace Platform.Timestamps
@@ -20,8 +21,15 @@ namespace Platform.Timestamps
         public Timestamp Create()
         {
             var utcTicks = (ulong)DateTime.UtcNow.Ticks;
-            _lastTicks = utcTicks > _lastTicks ? utcTicks : _lastTicks + 1;
-            return new Timestamp(_lastTicks);
+            ulong lastTicks, newTicks;
+            do
+            {
+                lastTicks = _lastTicks;
+                newTicks = utcTicks > lastTicks ? utcTicks : lastTicks + 1;
+            }
+            while (Interlocked.CompareExchange(ref _lastTicks, newTicks, lastTicks) != lastTicks);
+            
+            return new Timestamp(newTicks);
         }
     }
 }
