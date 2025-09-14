@@ -65,37 +65,19 @@ namespace Platform.Timestamps
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static implicit operator ulong(Timestamp timestamp) => timestamp.Ticks;
 
-        /// <summary>
-        /// <para>Returns a string that represents the current Timestamp.</para>
-        /// <para>Возвращает строку, которая представляет текущую метку времени.</para>
-        /// </summary>
-        /// <returns><para>A string that represents the current Timestamp.</para><para>Строка, представляющая текущую метку времени.</para></returns>
+        /// <inheritdoc />
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public override string ToString() => ((DateTime)this).ToString(DefaultFormat);
 
-        /// <summary>
-        /// <para>Определяет, равна ли текущая отметка времени другой отметке времени.</para>
-        /// <para>Indicates whether the current Timestamp is equal to another Timestamp.</para>
-        /// </summary>
-        /// <param name="other"><para>Other Timestamp.</para><para>Другая отметка времени.</para></param>
-        /// <returns><para>True if the current Timestamp is equal to the other Timestamp; otherwise, false.</para><para>Истину, если текущая отметка времени равна другой отметке времени; иначе ложь.</para></returns>
+        /// <inheritdoc />
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public bool Equals(Timestamp other) => Ticks == other.Ticks;
 
-        /// <summary>
-        /// <para>Determines whether the specified object is equal to the current object.</para>
-        /// <para>Определяет, равен ли указанный объект текущему объекту.</para>
-        /// </summary>
-        /// <param name="obj"><para>The object to compare with the current object.</para><para>Объект для сравнения с текущим объектом.</para></param>
-        /// <returns><para>True if the specified object is equal to the current object; otherwise, false.</para><para>Истину, если указанный объект равен текущему объекту; иначе ложь.</para></returns>
+        /// <inheritdoc />
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public override bool Equals(object obj) => obj is Timestamp timestamp ? Equals(timestamp) : false;
 
-        /// <summary>
-        /// <para>Serves as the default hash function.</para>
-        /// <para>Служит в качестве хэш-функции по умолчанию.</para>
-        /// </summary>
-        /// <returns><para>A hash code for the current object.</para><para>Хеш-код для текущего объекта.</para></returns>
+        /// <inheritdoc />
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public override int GetHashCode() => Ticks.GetHashCode();
 
